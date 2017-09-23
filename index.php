@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-class="{'body-grey': isGrey}">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Blank Page</title>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		AdminLTE
+	</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link rel="stylesheet" href="angular-app/app.css?version=<?php echo(rand()); ?>">
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -29,12 +32,15 @@
 	<script src="angular-app/pages/admin/admin.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/login/login.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
+	<script src="angular-app/pages/admin/1-1.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-2.data-jabatan/data-jabatan.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript">
 		window.version = <?php echo(rand()); ?>;
 	</script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini"
+	ng-class="{'body-grey': isGrey}">
 	<ui-view></ui-view>
 </body>
 </html>

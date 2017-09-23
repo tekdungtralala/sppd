@@ -5,7 +5,8 @@
 		.module('app')
 		.controller('LoginCtrl', LoginCtrl);
 
-	function LoginCtrl($state, abstractPage) {
+	function LoginCtrl($rootScope, $state, abstractPage) {
+		$rootScope.isGrey = true;
 		var vm = this;
 		vm.auth = {};
 		vm.errorMsg = false;
@@ -13,6 +14,7 @@
 		vm.auth.password = 'password';
 
 		vm.login = login;
+		vm.toAdminState = toAdminState;
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
@@ -29,6 +31,10 @@
 				.catch(function() {
 					vm.errorMsg = true;
 				});
+		}
+
+		function toAdminState() {
+			$state.go('admin');
 		}
 	}
 })();
