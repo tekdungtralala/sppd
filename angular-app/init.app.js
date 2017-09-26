@@ -7,8 +7,8 @@
 		// 'ngAnimate',
 
 		// Third party module
-		'ui.router'
-		// 'ui.bootstrap',
+		'ui.router',
+		'ui.bootstrap',
 		// 'datatables'
 	] )
 

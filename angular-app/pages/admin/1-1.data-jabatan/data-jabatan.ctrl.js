@@ -5,18 +5,58 @@
 		.module('app')
 		.controller('data-jabatan.ctrl', Controller);
 
-	function Controller($rootScope, $state, abstractPage, dataservice) {
+	function Controller($scope, $rootScope, $state, $uibModal, abstractPage, helper, dataservice) {
 		$rootScope.isGrey = false;
 		var vm = this;
 		vm.listData = [];
 
 		abstractPage.startCtrl().then( activate );
 		function activate() {
-			dataservice.getDataJabatan().then( afterGetData );
+			dataservice.getJabatan().then( afterGetData );
 			function afterGetData( results ) {
 				vm.listData = results;
-				console.log(_)
 			}
+		}
+
+		vm.openModal = openModal;
+		vm.submit = submit;
+		vm.remove = remove;
+		vm.closeModal = closeModal;
+
+		var modalInstance;
+		vm.formValue;
+		vm.hasError;
+		function openModal( data, templateUrl ) {
+			if ( data ) vm.formValue = data;
+			else vm.formValue = {};
+
+			modalInstance = $uibModal.open({
+				templateUrl: templateUrl,
+				size: 'md',
+				backdrop: 'static',
+				scope: $scope
+			});
+		}
+		function submit() {
+			vm.hasError = {};
+
+			if (!vm.formValue.name) vm.hasError['name'] = true;
+
+			if (Object.keys(vm.hasError).length > 0) {
+				helper.setFocus(Object.keys(vm.hasError)[0]);
+			} else {
+				if (vm.formValue.id) {
+					dataservice.editJabatan(vm.formValue).then(closeModal).then(activate);
+				} else {
+					dataservice.createJabatan(vm.formValue).then(closeModal).then(activate);
+				}
+			}
+		}
+		function remove() {
+			dataservice.removeJabatan(vm.formValue.id).then(closeModal).then(activate);
+		}
+		function closeModal() {
+			if (modalInstance && modalInstance.dismiss) modalInstance.dismiss();
 		}
 	}
 

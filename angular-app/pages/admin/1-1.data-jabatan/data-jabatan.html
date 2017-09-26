@@ -4,7 +4,8 @@
 			<div class="box">
 				<div class="box-header">
 					<h3 class="box-title">
-						<button type="button" class="btn btn-block btn-success btn-flat">
+						<button type="button" class="btn btn-block btn-success btn-flat"
+							ng-click="vm.openModal(null, 'data-modal.html');">
 							<span class="glyphicon glyphicon-plus"></span>
 							&nbsp;
 							Create
@@ -32,9 +33,15 @@
 								<td>{{data.id}}</td>
 								<td>{{data.name}}</td>
 								<td class="btn-actions">
-									<span ng-show="data.imutable !== '1'" class="glyphicon glyphicon-pencil"></span>
+									<span ng-show="data.imutable !== '1'"
+										class="glyphicon glyphicon-pencil"
+										ng-click="vm.openModal(data, 'data-modal.html');"
+										></span>
 									&nbsp;
-									<span ng-show="data.imutable !== '1'" class="glyphicon glyphicon-remove"></span>
+									<span ng-show="data.imutable !== '1'"
+										class="glyphicon glyphicon-remove"
+										ng-click="vm.openModal(data, 'confirm-modal.html');"
+										></span>
 								</td>
 							</tr>
 						</tbody>
@@ -43,6 +50,70 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/ng-template" id="data-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Form Input Jabatan</h4>
+		</div>
+		<div class="modal-body">
+
+			<form role="form">
+				<div class="box-body">
+					<div class="form-group" ng-show="vm.formValue.id">
+						<label >Id</label>
+						<input type="text" class="form-control" placeholder="Enter email" disabled
+							ng-model="vm.formValue.id">
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['name']}">
+						<label >Nama Jabatan</label>
+						<input type="text" class="form-control"
+							placeholder="Nama Jabatan"
+							id="name"
+							ng-model="vm.formValue.name">
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();">
+				Tutup
+			</button>
+			<button type="button" class="btn btn-primary btn-flat"
+				ng-click="vm.submit()">
+				Simpan
+			</button>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="confirm-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Confirmation</h4>
+		</div>
+		<div class="modal-body">
+			<p>Apakah Anda yakin, ingin menghapus data yang dipilih?</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();">
+				Batal
+			</button>
+			<button type="button" class="btn btn-danger btn-flat"
+				ng-click="vm.remove()">
+				Hapus
+			</button>
+		</div>
+	</script>
 
 	<!-- 
 		<div class="row">

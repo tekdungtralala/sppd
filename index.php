@@ -22,6 +22,7 @@
 
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
 	<script src="angular-app/init.app.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/main-config.app.js?version=<?php echo(rand()); ?>"></script>
@@ -29,6 +30,7 @@
 	<script src="angular-app/run.app.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/core/data.service.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/core/helper.service.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/abstract.page.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/admin.ctrl.js?version=<?php echo(rand()); ?>"></script>
