@@ -3,14 +3,14 @@
 
 	angular
 		.module('app')
-		.controller('data-jabatan.ctrl', Controller);
+		.controller('laporan-pegawai-sppd.ctrl', Controller);
 
 	function Controller($rootScope, $state, abstractPage) {
 		$rootScope.isGrey = false;
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
-			console.log('data-jabatan.ctrl');
+			console.log('laporan-pegawai-sppd.ctrl')
 		}
 	}
 

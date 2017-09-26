@@ -1,3 +1,7 @@
 .body-grey {
 	background: #d2d6de;
 }
+
+.admin-content .btn-actions span {
+	cursor: pointer;
+}

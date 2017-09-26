@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>
-		AdminLTE
-	</title>
+
+	<title>AdminLTE</title>
+
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -28,12 +28,18 @@
 	<script src="angular-app/router-config.app.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/run.app.js?version=<?php echo(rand()); ?>"></script>
 
+	<script src="angular-app/core/data.service.js?version=<?php echo(rand()); ?>"></script>
+
 	<script src="angular-app/pages/abstract.page.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/admin.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/login/login.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
-	<script src="angular-app/pages/admin/1-1.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
-	<script src="angular-app/pages/admin/1-2.data-jabatan/data-jabatan.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-1.data-jabatan/data-jabatan.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-2.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
+
+	<script src="angular-app/pages/admin/2-1.entry-surat-tugas/entry-surat-tugas.ctrl.js?version=<?php echo(rand()); ?>"></script>
+
+	<script src="angular-app/pages/admin/3-1.laporan-pegawai-sppd/laporan-pegawai-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript">
 		window.version = <?php echo(rand()); ?>;

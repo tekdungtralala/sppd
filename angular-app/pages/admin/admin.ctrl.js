@@ -8,9 +8,7 @@
 	function AdminCtrl($rootScope, $state, abstractPage) {
 		$rootScope.isGrey = false;
 		var vm = this;
-		vm.stateActive = $state.current.name;
 		
-
 		vm.logout = logout;
 		vm.toState = toState;
 
@@ -30,7 +28,6 @@
 		}
 
 		function toState( targetState ) {
-			vm.stateActive = targetState;
 			$state.go('admin.' + targetState);
 		}
 	}
