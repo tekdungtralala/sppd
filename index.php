@@ -15,14 +15,15 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	<link rel="stylesheet" href="angular-app/app.css?version=<?php echo(rand()); ?>">
 
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/fastclick/lib/fastclick.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/lodash/dist/lodash.min.js?version=<?php echo(rand()); ?>"></script>
 
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="bower_components/angular/angular.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/init.app.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/main-config.app.js?version=<?php echo(rand()); ?>"></script>

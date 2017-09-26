@@ -40,15 +40,16 @@
 		function submit() {
 			vm.hasError = {};
 
-			if (!vm.formValue.name) vm.hasError['name'] = true;
+			if ( !vm.formValue.name ) vm.hasError['name'] = true;
+			else if (_.find( vm.listData, function( d ) { console.log(vm.form);return vm.formValue.name === d.name && vm.formValue.id !== d.id; })) vm.hasError['name'] = true;
 
 			if (Object.keys(vm.hasError).length > 0) {
 				helper.setFocus(Object.keys(vm.hasError)[0]);
 			} else {
-				if (vm.formValue.id) {
-					dataservice.editJabatan(vm.formValue).then(closeModal).then(activate);
+				if ( vm.formValue.id ) {
+					dataservice.editJabatan( vm.formValue ).then( closeModal ).then( activate );
 				} else {
-					dataservice.createJabatan(vm.formValue).then(closeModal).then(activate);
+					dataservice.createJabatan( vm.formValue ).then( closeModal ).then( activate );
 				}
 			}
 		}

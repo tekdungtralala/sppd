@@ -25,7 +25,7 @@
 			return $http.put( 'api/jabatan/put.php', data );
 		}
 		function removeJabatan( id ) {
-			return $http.put( 'api/jabatan/delete.php?id=' + id);
+			return $http.delete( 'api/jabatan/delete.php?id=' + id);
 		}
 
 		function afterGet( response ) {
