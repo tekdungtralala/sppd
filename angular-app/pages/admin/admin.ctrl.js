@@ -5,7 +5,7 @@
 		.module('app')
 		.controller('AdminCtrl', AdminCtrl);
 
-	function AdminCtrl($rootScope, $state, abstractPage) {
+	function AdminCtrl($rootScope, $state, abstractPage, dataservice, appData) {
 		$rootScope.isGrey = false;
 		var vm = this;
 		
@@ -14,17 +14,14 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
-			if ( $state.current.name === 'admin' ) toState('data-pegawai');
+			if ( $state.current.name === 'admin' ) toState('data-jabatan');
 		}
 
 		function logout() {
-			$state.go('login');
-			return;
 			dataservice.logout().then(function() {
 				appData.setLoggedUser(null);
 				$state.go('login');
 			});
-			
 		}
 
 		function toState( targetState ) {

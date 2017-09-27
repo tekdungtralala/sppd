@@ -32,6 +32,7 @@
 
 	<script src="angular-app/core/data.service.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/core/helper.service.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/core/appdata.service.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/abstract.page.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/admin.ctrl.js?version=<?php echo(rand()); ?>"></script>
@@ -48,8 +49,7 @@
 		window.version = <?php echo(rand()); ?>;
 	</script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini"
-	ng-class="{'body-grey': isGrey}">
+<body class="hold-transition skin-blue sidebar-mini" ng-class="{'body-grey': isGrey}">
 	<ui-view></ui-view>
 </body>
 </html>

@@ -5,23 +5,20 @@
 		.module('app')
 		.controller('LoginCtrl', LoginCtrl);
 
-	function LoginCtrl($rootScope, $state, abstractPage) {
+	function LoginCtrl($rootScope, $state, appData, dataservice, abstractPage) {
 		$rootScope.isGrey = true;
 		var vm = this;
+
 		vm.auth = {};
-		vm.errorMsg = false;
 		vm.auth.username = 'root';
 		vm.auth.password = 'password';
+		vm.errorMsg = false;
 
 		vm.login = login;
-		vm.toAdminState = toAdminState;
-
 		abstractPage.startCtrl().then(activate);
-		function activate() {
-		}
+		function activate() {}
 
 		function login() {
-			return;
 			vm.errorMsg = false;
 			dataservice.login(vm.auth)
 				.then(function() {
@@ -33,8 +30,6 @@
 				});
 		}
 
-		function toAdminState() {
-			$state.go('admin');
-		}
 	}
+
 })();

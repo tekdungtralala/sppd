@@ -6,8 +6,7 @@
 		.module( 'app' )
 		.factory( 'abstractPage' , AbstractPage);
 
-	function AbstractPage($q, $state, $stateParams) {
-		// , appData, dataservice
+	function AbstractPage($q, $state, $stateParams, appData, dataservice) {
 		var service = {
 			startCtrl: startCtrl,
 			gotoDashboardPage: gotoDashboardPage,
@@ -16,7 +15,6 @@
 		return service;
 
 		function startCtrl() {
-			return $q.resolve(true);
 			var hasLoggedUser = appData.hasLoggedUser();
 			var isSecurePage = $state.current.isSecure;
 
