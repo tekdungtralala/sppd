@@ -5,3 +5,13 @@
 .admin-content .btn-actions span {
 	cursor: pointer;
 }
+
+.admin-content .has-sort {
+	cursor: pointer;
+}
+.admin-content .has-sort > span {
+	float: right;
+}
+.admin-content .has-sort > span .glyphicon-sort {
+	opacity: 0.3;
+}

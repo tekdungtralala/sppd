@@ -25,11 +25,25 @@
 					<table class="table table-hover">
 						<tbody>
 							<tr>
-								<th>ID</th>
-								<th>Golongan</th>
+								<th class="has-sort" ng-click="vm.toggleSort('id')">
+									ID
+									<span>
+										<span class="glyphicon glyphicon-sort" ng-show=" vm.orderBy !== '-id' && vm.orderBy !== '+id' "></span>
+										<span class="glyphicon glyphicon-sort-by-attributes" ng-show=" vm.orderBy === '+id' "></span>
+										<span class="glyphicon glyphicon-sort-by-attributes-alt" ng-show=" vm.orderBy === '-id' "></span>
+									</span>
+								</th>
+								<th class="has-sort" ng-click="vm.toggleSort('name')">
+									Golongan
+									<span>
+										<span class="glyphicon glyphicon-sort" ng-show=" vm.orderBy !== '-name' && vm.orderBy !== '+name' "></span>
+										<span class="glyphicon glyphicon-sort-by-attributes" ng-show=" vm.orderBy === '+name' "></span>
+										<span class="glyphicon glyphicon-sort-by-attributes-alt" ng-show=" vm.orderBy === '-name' "></span>
+									</span>
+								</th>
 								<th>Action</th>
 							</tr>
-							<tr ng-repeat="data in vm.listData">
+							<tr ng-repeat="data in vm.listData | orderBy: vm.orderBy">
 								<td>{{data.id}}</td>
 								<td>{{data.name}}</td>
 								<td class="btn-actions">

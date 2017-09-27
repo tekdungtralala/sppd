@@ -18,6 +18,12 @@
 			}
 		}
 
+		vm.orderBy = '+id';
+		vm.toggleSort = toggleSort;
+		function toggleSort(value) {
+			vm.orderBy = ( vm.orderBy !== ( '+' + value ) ) ? ( '+' + value ) : ( '-' + value );
+		}
+
 		vm.openModal = openModal;
 		vm.submit = submit;
 		vm.remove = remove;
