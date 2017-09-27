@@ -20,7 +20,12 @@
 			getGolongan: getGolongan,
 			createGolongan: createGolongan,
 			editGolongan: editGolongan,
-			removeGolongan: removeGolongan
+			removeGolongan: removeGolongan,
+
+			getPegawai: getPegawai,
+			createPegawai: createPegawai,
+			editPegawai: editPegawai,
+			removePegawai: removePegawai
 		};
 		return service;
 
@@ -39,6 +44,12 @@
 		function createGolongan( data ) { return $http.post( 'api/golongan/post.php', data ); }
 		function editGolongan( data ) { return $http.put( 'api/golongan/put.php', data ); }
 		function removeGolongan( id ) { return $http.delete( 'api/golongan/delete.php?id=' + id); }
+
+
+		function getPegawai() { return $http.get( 'api/pegawai/get.php' ).then( afterGet ); }
+		function createPegawai( data ) { return $http.post( 'api/pegawai/post.php', data ); }
+		function editPegawai( data ) { return $http.put( 'api/pegawai/put.php', data ); }
+		function removePegawai( id ) { return $http.delete( 'api/pegawai/delete.php?id=' + id); }
 
 		function afterGet( response ) { return response.data; }
 	}
