@@ -24,9 +24,19 @@
 					isSecure: true
 				})
 
+				.state('admin.data-golongan', {
+					url: '/data-golongan',
+					templateUrl: 'angular-app/pages/admin/1-2.data-golongan/data-golongan.html?version=' + window.version,
+					controller: 'data-golongan.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Data Golongan',
+					isSecure: true
+				})
+
 				.state('admin.data-pegawai', {
 					url: '/data-pegawai',
-					templateUrl: 'angular-app/pages/admin/1-2.data-pegawai/data-pegawai.html?version=' + window.version,
+					templateUrl: 'angular-app/pages/admin/1-3.data-pegawai/data-pegawai.html?version=' + window.version,
 					controller: 'data-pegawai.ctrl',
 					controllerAs: 'vm',
 					treeViewActive: 'Master',

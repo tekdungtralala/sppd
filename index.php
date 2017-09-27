@@ -39,15 +39,14 @@
 	<script src="angular-app/pages/login/login.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/admin/1-1.data-jabatan/data-jabatan.ctrl.js?version=<?php echo(rand()); ?>"></script>
-	<script src="angular-app/pages/admin/1-2.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-2.data-golongan/data-golongan.ctlr.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-3.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/admin/2-1.entry-surat-tugas/entry-surat-tugas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/admin/3-1.laporan-pegawai-sppd/laporan-pegawai-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
-	<script type="text/javascript">
-		window.version = <?php echo(rand()); ?>;
-	</script>
+	<script type="text/javascript"> window.version = <?php echo(rand()); ?>; </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-class="{'body-grey': isGrey}">
 	<ui-view></ui-view>
