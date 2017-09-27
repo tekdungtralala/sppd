@@ -15,7 +15,12 @@
 			getJabatan: getJabatan,
 			createJabatan: createJabatan,
 			editJabatan: editJabatan,
-			removeJabatan: removeJabatan
+			removeJabatan: removeJabatan,
+
+			getGolongan: getGolongan,
+			createGolongan: createGolongan,
+			editGolongan: editGolongan,
+			removeGolongan: removeGolongan
 		};
 		return service;
 
@@ -28,6 +33,12 @@
 		function createJabatan( data ) { return $http.post( 'api/jabatan/post.php', data ); }
 		function editJabatan( data ) { return $http.put( 'api/jabatan/put.php', data ); }
 		function removeJabatan( id ) { return $http.delete( 'api/jabatan/delete.php?id=' + id); }
+
+
+		function getGolongan() { return $http.get( 'api/golongan/get.php' ).then( afterGet ); }
+		function createGolongan( data ) { return $http.post( 'api/golongan/post.php', data ); }
+		function editGolongan( data ) { return $http.put( 'api/golongan/put.php', data ); }
+		function removeGolongan( id ) { return $http.delete( 'api/golongan/delete.php?id=' + id); }
 
 		function afterGet( response ) { return response.data; }
 	}
