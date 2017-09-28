@@ -1,4 +1,4 @@
-<div>
+<div class="data-provinsi">
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
@@ -41,11 +41,18 @@
 										<span class="glyphicon glyphicon-sort-by-attributes-alt" ng-show=" vm.orderBy === '-name' "></span>
 									</span>
 								</th>
+								<th>Jumlah Kota</th>
 								<th>Action</th>
 							</tr>
 							<tr ng-repeat="data in vm.listData | orderBy: vm.orderBy">
 								<td>{{data.id}}</td>
 								<td>{{data.name}}</td>
+								<td>
+									{{data.cities.length}}
+									&nbsp;
+									<span class="glyphicon glyphicon-cog manage-cities-btn"
+										ng-click="vm.manageCities( data );"></span>
+								</td>
 								<td class="btn-actions">
 									<span ng-show="data.imutable !== '1'"
 										class="glyphicon glyphicon-pencil"
@@ -64,6 +71,53 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/ng-template" id="cities-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal();vm.reActivate();">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Kelola Kota</h4>
+		</div>
+		<div class="modal-body data-provinsi-manage-cities">
+
+			<div class="col col-xs-4" 
+				ng-repeat="c in vm.selectedPronice.cities"
+				ng-class="{'edit-mode': c.editMode}">
+				<div class="input-group" ng-show="!c.editMode">
+					<input type="text" class="form-control city-disable" disabled ng-model="c.name">
+					<span class="input-group-addon">
+						<i class="fa fa-eraser action-btn" ng-click="vm.removeCity( c );" style="margin-right: 20px;"></i>
+						<i class="fa fa-pencil action-btn" ng-click="vm.editCity( c );"></i>
+					</span>
+				</div>
+				<div class="input-group" ng-show="c.editMode">
+					<input type="text" class="form-control" ng-model="c.nameTemp">
+					<span class="input-group-addon" >
+						<i class="fa fa-floppy-o action-btn" ng-click="vm.saveEdit( c );" style="margin-right: 24px;"></i>
+						<i class="fa fa-close action-btn" ng-click="vm.cancelEdit( c );"></i>
+					</span>
+				</div>
+			</div>
+			<div class="col col-xs-4">
+				<div class="input-group">
+					<input type="text" class="form-control" ng-model="vm.cityName">
+					<span class="input-group-addon" >
+						<i class="fa fa-floppy-o action-btn" ng-click="vm.createNewCity()" ></i>
+					</span>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();vm.reActivate();">
+				Tutup
+			</button>
+		</div>
+	</script>
 
 	<script type="text/ng-template" id="data-modal.html">
 		<div class="modal-header">

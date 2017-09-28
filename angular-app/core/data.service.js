@@ -8,29 +8,17 @@
 
 	function DataService($q, $http, $state, $stateParams) {
 		var service = {
-			login: login,
-			logout: logout,
-			hasLoggedUser: hasLoggedUser,
+			login: login, logout: logout, hasLoggedUser: hasLoggedUser,
 
-			getJabatan: getJabatan,
-			createJabatan: createJabatan,
-			editJabatan: editJabatan,
-			removeJabatan: removeJabatan,
+			getJabatan: getJabatan, createJabatan: createJabatan, editJabatan: editJabatan, removeJabatan: removeJabatan,
 
-			getGolongan: getGolongan,
-			createGolongan: createGolongan,
-			editGolongan: editGolongan,
-			removeGolongan: removeGolongan,
+			getGolongan: getGolongan, createGolongan: createGolongan, editGolongan: editGolongan, removeGolongan: removeGolongan,
 
-			getPegawai: getPegawai,
-			createPegawai: createPegawai,
-			editPegawai: editPegawai,
-			removePegawai: removePegawai,
+			getPegawai: getPegawai, createPegawai: createPegawai, editPegawai: editPegawai, removePegawai: removePegawai,
 
-			getProvinsi: getProvinsi,
-			createProvinsi: createProvinsi,
-			editProvinsi: editProvinsi,
-			removeProvinsi: removeProvinsi
+			getProvinsi: getProvinsi, createProvinsi: createProvinsi, editProvinsi: editProvinsi, removeProvinsi: removeProvinsi,
+
+			getKota: getKota, createKota: createKota, editKota: editKota, removeKota: removeKota
 		};
 		return service;
 
@@ -38,18 +26,15 @@
 		function logout() { return $http.get( 'api/login/logout.php' ); }
 		function hasLoggedUser() { return $http.get( 'api/login/check_user.php' ); }
 
-
 		function getJabatan() { return getAPI('jabatan'); }
 		function createJabatan( data ) { return postAPI('jabatan', data); }
 		function editJabatan( data ) { return putAPI('jabatan', data); }
 		function removeJabatan( id ) { return deleteAPI('jabatan', id); }
 
-
 		function getGolongan() { return getAPI('golongan'); }
 		function createGolongan( data ) { return postAPI('golongan', data); }
 		function editGolongan( data ) { return putAPI('pegawai', data); }
 		function removeGolongan( id ) { return deleteAPI('jabatan', id); }
-
 
 		function getPegawai() { return getAPI('pegawai'); }
 		function createPegawai( data ) { return postAPI('pegawai', data); }
@@ -60,6 +45,11 @@
 		function createProvinsi( data ) { return postAPI('provinsi', data); }
 		function editProvinsi( data ) { return putAPI('provinsi', data); }
 		function removeProvinsi( id ) { return deleteAPI('provinsi', id); }
+
+		function getKota() { return getAPI('kota'); }
+		function createKota( data ) { return postAPI('kota', data).then(afterGet); }
+		function editKota( data ) { return putAPI('kota', data); }
+		function removeKota( id ) { return deleteAPI('kota', id); }
 
 
 		function getAPI( folderName ) {

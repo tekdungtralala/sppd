@@ -15,3 +15,16 @@
 .admin-content .has-sort > span .glyphicon-sort {
 	opacity: 0.3;
 }
+
+.admin-content .data-provinsi .manage-cities-btn {
+	cursor: pointer;
+	position: relative;
+	top: 3px;
+}
+.data-provinsi-manage-cities input.city-disable {
+	cursor: default !important;
+	background: rgb(235, 232, 232) !important;
+}
+.data-provinsi-manage-cities .action-btn {
+	cursor: pointer;
+}
