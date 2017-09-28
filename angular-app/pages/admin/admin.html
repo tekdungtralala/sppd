@@ -51,7 +51,9 @@
 			<li ng-click="vm.toState('data-angkutan');" ng-class="{'active': $root.menuActive === '/data-angkutan' }">
 				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Angkutan</a>
 			</li>
-			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Mata Anggaran</a></li>
+			<li ng-click="vm.toState('data-mata-anggaran');" ng-class="{'active': $root.menuActive === '/data-mata-anggaran' }">
+				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Mata Anggaran</a>
+			</li>
 		  </ul>
 		</li>
 

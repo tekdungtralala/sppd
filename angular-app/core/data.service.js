@@ -20,7 +20,9 @@
 
 			getKota: getKota, createKota: createKota, editKota: editKota, removeKota: removeKota,
 
-			getAngkutan: getAngkutan, createAngkutan: createAngkutan, editAngkutan: editAngkutan, removeAngkutan: removeAngkutan
+			getAngkutan: getAngkutan, createAngkutan: createAngkutan, editAngkutan: editAngkutan, removeAngkutan: removeAngkutan,
+
+			getMataAnggaran: getMataAnggaran, createMataAnggaran: createMataAnggaran, editMataAnggaran: editMataAnggaran, removeMataAnggaranByName: removeMataAnggaranByName, removeMataAnggaranByNameAndSub: removeMataAnggaranByNameAndSub
 		};
 		return service;
 
@@ -57,6 +59,12 @@
 		function createAngkutan( data ) { return postAPI('angkutan', data).then(afterGet); }
 		function editAngkutan( data ) { return putAPI('angkutan', data); }
 		function removeAngkutan( id ) { return deleteAPI('angkutan', id); }
+
+		function getMataAnggaran() { return getAPI('mata-anggaran'); }
+		function createMataAnggaran( data ) { return postAPI('mata-anggaran', data).then(afterGet); }
+		function editMataAnggaran( data ) { return putAPI('mata-anggaran', data); }
+		function removeMataAnggaranByName( name ) { return $http.delete( 'api/mata-anggaran/deleteByName.php?name=' + name); }
+		function removeMataAnggaranByNameAndSub( name, sub ) { return $http.delete( 'api/mata-anggaran/deleteByNameAndSub.php?name=' + name + '&sub_budget=' + sub); }
 
 
 		function getAPI( folderName ) {

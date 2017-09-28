@@ -59,6 +59,15 @@
 					titlePage: 'Data Angkutan',
 					isSecure: true
 				})
+				.state('admin.data-mata-anggaran', {
+					url: '/data-mata-anggaran',
+					templateUrl: 'angular-app/pages/admin/1-6.data-mata-anggaran/data-mata-anggaran.html?version=' + window.version,
+					controller: 'data-mata-anggaran.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Data Mata Anggaran',
+					isSecure: true
+				})
 
 
 

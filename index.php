@@ -43,6 +43,7 @@
 	<script src="angular-app/pages/admin/1-3.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/1-4.data-provinsi/data-provinsi.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/1-5.data-angkutan/data-angkutan.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/1-6.data-mata-anggaran/data-mata-anggaran.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/admin/2-1.entry-surat-tugas/entry-surat-tugas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
