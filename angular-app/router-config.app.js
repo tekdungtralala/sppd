@@ -23,7 +23,6 @@
 					titlePage: 'Data Jabatan',
 					isSecure: true
 				})
-
 				.state('admin.data-golongan', {
 					url: '/data-golongan',
 					templateUrl: 'angular-app/pages/admin/1-2.data-golongan/data-golongan.html?version=' + window.version,
@@ -33,7 +32,6 @@
 					titlePage: 'Data Golongan',
 					isSecure: true
 				})
-
 				.state('admin.data-pegawai', {
 					url: '/data-pegawai',
 					templateUrl: 'angular-app/pages/admin/1-3.data-pegawai/data-pegawai.html?version=' + window.version,
@@ -43,7 +41,6 @@
 					titlePage: 'Data Pegawai',
 					isSecure: true
 				})
-
 				.state('admin.data-provinsi', {
 					url: '/data-provinsi',
 					templateUrl: 'angular-app/pages/admin/1-4.data-provinsi/data-provinsi.html?version=' + window.version,
@@ -51,6 +48,15 @@
 					controllerAs: 'vm',
 					treeViewActive: 'Master',
 					titlePage: 'Data Provinsi',
+					isSecure: true
+				})
+				.state('admin.data-angkutan', {
+					url: '/data-angkutan',
+					templateUrl: 'angular-app/pages/admin/1-5.data-angkutan/data-angkutan.html?version=' + window.version,
+					controller: 'data-angkutan.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Data Angkutan',
 					isSecure: true
 				})
 

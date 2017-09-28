@@ -18,7 +18,9 @@
 
 			getProvinsi: getProvinsi, createProvinsi: createProvinsi, editProvinsi: editProvinsi, removeProvinsi: removeProvinsi,
 
-			getKota: getKota, createKota: createKota, editKota: editKota, removeKota: removeKota
+			getKota: getKota, createKota: createKota, editKota: editKota, removeKota: removeKota,
+
+			getAngkutan: getAngkutan, createAngkutan: createAngkutan, editAngkutan: editAngkutan, removeAngkutan: removeAngkutan
 		};
 		return service;
 
@@ -50,6 +52,11 @@
 		function createKota( data ) { return postAPI('kota', data).then(afterGet); }
 		function editKota( data ) { return putAPI('kota', data); }
 		function removeKota( id ) { return deleteAPI('kota', id); }
+
+		function getAngkutan() { return getAPI('angkutan'); }
+		function createAngkutan( data ) { return postAPI('angkutan', data).then(afterGet); }
+		function editAngkutan( data ) { return putAPI('angkutan', data); }
+		function removeAngkutan( id ) { return deleteAPI('angkutan', id); }
 
 
 		function getAPI( folderName ) {
