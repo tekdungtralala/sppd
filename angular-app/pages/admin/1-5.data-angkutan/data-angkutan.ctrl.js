@@ -34,7 +34,7 @@
 		vm.formValue;
 		vm.hasError;
 		function openModal( data, templateUrl ) {
-			if ( data ) vm.formValue = data;
+			if ( data ) vm.formValue = angular.copy(data);
 			else vm.formValue = {};
 
 			modalInstance = $uibModal.open({
