@@ -70,6 +70,7 @@
 			activate();
 		}
 		function createNewCity() {
+			if ( !vm.cityName ) return;
 			var city = {
 				name: vm.cityName,
 				province_id: vm.selectedPronice.id
