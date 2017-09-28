@@ -25,7 +25,12 @@
 			getPegawai: getPegawai,
 			createPegawai: createPegawai,
 			editPegawai: editPegawai,
-			removePegawai: removePegawai
+			removePegawai: removePegawai,
+
+			getProvinsi: getProvinsi,
+			createProvinsi: createProvinsi,
+			editProvinsi: editProvinsi,
+			removeProvinsi: removeProvinsi
 		};
 		return service;
 
@@ -34,22 +39,41 @@
 		function hasLoggedUser() { return $http.get( 'api/login/check_user.php' ); }
 
 
-		function getJabatan() { return $http.get( 'api/jabatan/get.php' ).then( afterGet ); }
-		function createJabatan( data ) { return $http.post( 'api/jabatan/post.php', data ); }
-		function editJabatan( data ) { return $http.put( 'api/jabatan/put.php', data ); }
-		function removeJabatan( id ) { return $http.delete( 'api/jabatan/delete.php?id=' + id); }
+		function getJabatan() { return getAPI('jabatan'); }
+		function createJabatan( data ) { return postAPI('jabatan', data); }
+		function editJabatan( data ) { return putAPI('jabatan', data); }
+		function removeJabatan( id ) { return deleteAPI('jabatan', id); }
 
 
-		function getGolongan() { return $http.get( 'api/golongan/get.php' ).then( afterGet ); }
-		function createGolongan( data ) { return $http.post( 'api/golongan/post.php', data ); }
-		function editGolongan( data ) { return $http.put( 'api/golongan/put.php', data ); }
-		function removeGolongan( id ) { return $http.delete( 'api/golongan/delete.php?id=' + id); }
+		function getGolongan() { return getAPI('golongan'); }
+		function createGolongan( data ) { return postAPI('golongan', data); }
+		function editGolongan( data ) { return putAPI('pegawai', data); }
+		function removeGolongan( id ) { return deleteAPI('jabatan', id); }
 
 
-		function getPegawai() { return $http.get( 'api/pegawai/get.php' ).then( afterGet ); }
-		function createPegawai( data ) { return $http.post( 'api/pegawai/post.php', data ); }
-		function editPegawai( data ) { return $http.put( 'api/pegawai/put.php', data ); }
-		function removePegawai( id ) { return $http.delete( 'api/pegawai/delete.php?id=' + id); }
+		function getPegawai() { return getAPI('pegawai'); }
+		function createPegawai( data ) { return postAPI('pegawai', data); }
+		function editPegawai( data ) { return putAPI('pegawai', data); }
+		function removePegawai( id ) { return deleteAPI('jabatan', id); }
+
+		function getProvinsi() { return getAPI('provinsi'); }
+		function createProvinsi( data ) { return postAPI('provinsi', data); }
+		function editProvinsi( data ) { return putAPI('provinsi', data); }
+		function removeProvinsi( id ) { return deleteAPI('provinsi', id); }
+
+
+		function getAPI( folderName ) {
+			return $http.get( 'api/' + folderName + '/get.php' ).then( afterGet );
+		}
+		function postAPI( folderName, data ) {
+			return $http.post( 'api/' + folderName + '/post.php', data );
+		}
+		function putAPI( folderName, data ) {
+			return $http.put( 'api/' + folderName + '/put.php', data );
+		}
+		function deleteAPI( folderName, id ) {
+			return $http.delete( 'api/' + folderName + '/delete.php?id=' + id);
+		}
 
 		function afterGet( response ) { return response.data; }
 	}

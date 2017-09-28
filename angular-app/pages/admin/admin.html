@@ -45,7 +45,9 @@
 			<li ng-click="vm.toState('data-pegawai');" ng-class="{'active': $root.menuActive === '/data-pegawai' }">
 				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Pegawai</a>
 			</li>
-			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Provinsi</a></li>
+			<li ng-click="vm.toState('data-provinsi');" ng-class="{'active': $root.menuActive === '/data-provinsi' }">
+				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Provinsi</a>
+			</li>
 			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Angkutan</a></li>
 			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Data Mata Anggaran</a></li>
 		  </ul>

@@ -44,6 +44,18 @@
 					isSecure: true
 				})
 
+				.state('admin.data-provinsi', {
+					url: '/data-provinsi',
+					templateUrl: 'angular-app/pages/admin/1-4.data-provinsi/data-provinsi.html?version=' + window.version,
+					controller: 'data-provinsi.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Data Provinsi',
+					isSecure: true
+				})
+
+
+
 				.state('admin.entry-surat-tugas', {
 					url: '/entry-surat-tugas',
 					templateUrl: 'angular-app/pages/admin/2-1.entry-surat-tugas/entry-surat-tugas.html?version=' + window.version,
@@ -53,6 +65,8 @@
 					titlePage: 'Entry Surat Tugas',
 					isSecure: true
 				})
+
+
 
 				.state('admin.laporan-pegawai-sppd', {
 					url: '/laporan-pegawai-sppd',
