@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 28, 2017 at 11:29 AM
+-- Generation Time: Sep 29, 2017 at 01:40 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.30
 
@@ -58,9 +58,12 @@ CREATE TABLE `budget` (
 --
 
 INSERT INTO `budget` (`id`, `name`, `sub_budget`) VALUES
-(23, '1', '1'),
-(24, '1', '3'),
-(25, '1', '33'),
+(23, '234234234', '1'),
+(27, '234234234', '234324'),
+(24, '234234234', '3'),
+(25, '234234234', '33'),
+(26, '234234234', 'ddd'),
+(28, '234234234', 'sdfdsf'),
 (3, '3470.004.011', '524111'),
 (4, '3470.004.011', '524112'),
 (7, '3470.004.022', '9843.001'),
@@ -209,6 +212,30 @@ INSERT INTO `transport` (`id`, `name`) VALUES
 (3, 'Kereta Api'),
 (4, 'Pesawat Terbang');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `travel_expenses`
+--
+
+CREATE TABLE `travel_expenses` (
+  `id` int(11) NOT NULL,
+  `office_class_id` int(11) NOT NULL,
+  `province_id` int(11) NOT NULL,
+  `transportation_costs` int(100) NOT NULL,
+  `lodging_cost` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `travel_expenses`
+--
+
+INSERT INTO `travel_expenses` (`id`, `office_class_id`, `province_id`, `transportation_costs`, `lodging_cost`) VALUES
+(2, 1, 2, 430123, 435000),
+(4, 1, 2, 430000, 435000),
+(5, 1, 2, 430000, 435000),
+(6, 1, 6, 2000, 2000);
+
 --
 -- Indexes for dumped tables
 --
@@ -270,6 +297,13 @@ ALTER TABLE `transport`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `travel_expenses`
+--
+ALTER TABLE `travel_expenses`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `travel_expenses_ibfk_1` (`office_class_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -282,12 +316,12 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `budget`
 --
 ALTER TABLE `budget`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `officer`
 --
@@ -297,7 +331,7 @@ ALTER TABLE `officer`
 -- AUTO_INCREMENT for table `office_class`
 --
 ALTER TABLE `office_class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `office_position`
 --
@@ -314,6 +348,11 @@ ALTER TABLE `province`
 ALTER TABLE `transport`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `travel_expenses`
+--
+ALTER TABLE `travel_expenses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
 -- Constraints for dumped tables
 --
 
@@ -329,6 +368,12 @@ ALTER TABLE `city`
 ALTER TABLE `officer`
   ADD CONSTRAINT `officer_ibfk_1` FOREIGN KEY (`office_position_id`) REFERENCES `office_position` (`id`) ON DELETE SET NULL,
   ADD CONSTRAINT `officer_ibfk_2` FOREIGN KEY (`office_class_id`) REFERENCES `office_class` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `travel_expenses`
+--
+ALTER TABLE `travel_expenses`
+  ADD CONSTRAINT `travel_expenses_ibfk_1` FOREIGN KEY (`office_class_id`) REFERENCES `office_class` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
