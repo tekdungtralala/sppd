@@ -6,7 +6,7 @@
 		$sql = "update officer set" 
 			. " name='". $person['name'] . "', " 
 			. " phone_number='". $person['phone_number'] . "', " 
-			. " email='". $person['email'] . "', " 
+			. " officer_id='". $person['officer_id'] . "', " 
 			. " office_class_id='". $person['office_class_id'] . "', " 
 			. " office_position_id='". $person['office_position_id'] . "' " 
 			. " where id=" . $person['id'];

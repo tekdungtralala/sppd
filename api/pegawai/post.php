@@ -5,7 +5,7 @@
 		$person = (array) json_decode($json);
 		$sql = "insert into officer values(NULL, " 
 			. " '" . $person['name'] . "', " 
-			. " '" . $person['phone_number'] . "', " 
+			. " '" . $person['officer_id'] . "', " 
 			. " '" . $person['email'] . "', " 
 			. " '" . $person['office_class_id'] . "', " 
 			. " '" . $person['office_position_id'] . "' " 

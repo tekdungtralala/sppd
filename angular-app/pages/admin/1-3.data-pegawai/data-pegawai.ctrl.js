@@ -70,7 +70,7 @@
 			if ( !vm.formValue.name ) vm.hasError['name'] = true;
 			else if (_.find( vm.listData, function( d ) { return vm.formValue.name === d.name && vm.formValue.id !== d.id; })) vm.hasError['name'] = true;
 
-			if ( !vm.formValue.email ) vm.hasError['email'] = true;
+			if ( !vm.formValue.officer_id ) vm.hasError['officer_id'] = true;
 			if ( !vm.formValue.phone_number ) vm.hasError['phone_number'] = true;
 
 			if (Object.keys(vm.hasError).length > 0) {
