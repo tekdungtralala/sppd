@@ -24,7 +24,10 @@
 
 			getMataAnggaran: getMataAnggaran, createMataAnggaran: createMataAnggaran, editMataAnggaran: editMataAnggaran, removeMataAnggaranByName: removeMataAnggaranByName, removeMataAnggaranByNameAndSub: removeMataAnggaranByNameAndSub,
 
-			getBiayaPerjalananDinas: getBiayaPerjalananDinas, createBiayaPerjalananDinas: createBiayaPerjalananDinas, editBiayaPerjalananDinas: editBiayaPerjalananDinas
+			getBiayaPerjalananDinas: getBiayaPerjalananDinas, createBiayaPerjalananDinas: createBiayaPerjalananDinas, editBiayaPerjalananDinas: editBiayaPerjalananDinas,
+
+			getSPPD: getSPPD,
+			getSPPDOfficer: getSPPDOfficer
 		};
 		return service;
 
@@ -71,6 +74,9 @@
 		function getBiayaPerjalananDinas() { return getAPI('biaya-perjalanan-dinas'); }
 		function createBiayaPerjalananDinas( data ) { return postAPI('biaya-perjalanan-dinas', data); }
 		function editBiayaPerjalananDinas( data ) { return putAPI('biaya-perjalanan-dinas', data); }
+
+		function getSPPD() { return getAPI('sppd'); }
+		function getSPPDOfficer( sppdId ) { return $http.get( 'api/sppd/get_officer.php?sppd_id=' + sppdId ).then( afterGet ); }
 
 
 		function getAPI( folderName ) {

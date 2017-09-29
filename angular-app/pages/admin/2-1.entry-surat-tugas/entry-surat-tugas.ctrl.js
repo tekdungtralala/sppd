@@ -5,12 +5,26 @@
 		.module('app')
 		.controller('entry-surat-tugas.ctrl', Controller);
 
-	function Controller($rootScope, $state, abstractPage) {
+	function Controller($scope, $rootScope, $state, $uibModal, abstractPage, helper, dataservice) {
 		$rootScope.isGrey = false;
+		var vm = this;
+		var modalInstance;
+		vm.listData = [];
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
-			console.log('entry-surat-tugas.ctrl')
+
+			dataservice.getSPPD().then( afterGet );
+			function afterGet( results ) {
+				vm.listData = results;
+				_.forEach( vm.listData, function( d ) {
+					dataservice.getSPPDOfficer( d.id ).then( afterGetOfficer );
+					function afterGetOfficer( officers ) {
+						console.log(officers)
+						d.officers = officers;
+					}
+				});
+			}
 		}
 	}
 
