@@ -68,6 +68,15 @@
 					titlePage: 'Data Mata Anggaran',
 					isSecure: true
 				})
+				.state('admin.data-biaya-perjalanan-dinas', {
+					url: '/data-biaya-perjalanan-dinas',
+					templateUrl: 'angular-app/pages/admin/1-7.data-biaya-perjalanan-dinas/data-biaya-perjalanan-dinas.html?version=' + window.version,
+					controller: 'data-biaya-perjalanan-dinas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Data Biaya Perjalanan Dinas',
+					isSecure: true
+				})
 
 
 

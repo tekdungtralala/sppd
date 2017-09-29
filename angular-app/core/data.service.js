@@ -22,7 +22,9 @@
 
 			getAngkutan: getAngkutan, createAngkutan: createAngkutan, editAngkutan: editAngkutan, removeAngkutan: removeAngkutan,
 
-			getMataAnggaran: getMataAnggaran, createMataAnggaran: createMataAnggaran, editMataAnggaran: editMataAnggaran, removeMataAnggaranByName: removeMataAnggaranByName, removeMataAnggaranByNameAndSub: removeMataAnggaranByNameAndSub
+			getMataAnggaran: getMataAnggaran, createMataAnggaran: createMataAnggaran, editMataAnggaran: editMataAnggaran, removeMataAnggaranByName: removeMataAnggaranByName, removeMataAnggaranByNameAndSub: removeMataAnggaranByNameAndSub,
+
+			getBiayaPerjalananDinas: getBiayaPerjalananDinas, createBiayaPerjalananDinas: createBiayaPerjalananDinas, editBiayaPerjalananDinas: editBiayaPerjalananDinas
 		};
 		return service;
 
@@ -65,6 +67,10 @@
 		function editMataAnggaran( data ) { return putAPI('mata-anggaran', data); }
 		function removeMataAnggaranByName( name ) { return $http.delete( 'api/mata-anggaran/deleteByName.php?name=' + name); }
 		function removeMataAnggaranByNameAndSub( name, sub ) { return $http.delete( 'api/mata-anggaran/deleteByNameAndSub.php?name=' + name + '&sub_budget=' + sub); }
+
+		function getBiayaPerjalananDinas() { return getAPI('biaya-perjalanan-dinas'); }
+		function createBiayaPerjalananDinas( data ) { return postAPI('biaya-perjalanan-dinas', data); }
+		function editBiayaPerjalananDinas( data ) { return putAPI('biaya-perjalanan-dinas', data); }
 
 
 		function getAPI( folderName ) {
