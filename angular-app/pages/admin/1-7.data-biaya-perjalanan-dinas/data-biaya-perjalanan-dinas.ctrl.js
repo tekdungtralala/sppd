@@ -12,6 +12,7 @@
 
 		abstractPage.startCtrl().then( activate );
 		function activate() {
+			vm.search = '';
 			var listTravelCost = [];
 			var listProvince = [];
 			var listOfficeClass = [];

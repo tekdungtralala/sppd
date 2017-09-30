@@ -13,6 +13,7 @@
 
 		abstractPage.startCtrl().then( activate );
 		function activate() {
+			vm.search = '';
 			vm.listData = [];
 			dataservice.getMataAnggaran().then( afterGet );
 			function afterGet( results ) {

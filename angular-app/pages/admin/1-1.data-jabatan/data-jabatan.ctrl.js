@@ -12,6 +12,7 @@
 
 		abstractPage.startCtrl().then( activate );
 		function activate() {
+			vm.search = '';
 			dataservice.getJabatan().then( afterGetData );
 			function afterGetData( results ) {
 				vm.listData = results;

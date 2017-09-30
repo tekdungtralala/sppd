@@ -16,6 +16,7 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
+			vm.search = '';
 			dataservice.getGolongan().then(  afterGetGolongan );
 			function afterGetGolongan( results ) {
 				vm.listGolongan = results;
@@ -34,7 +35,6 @@
 				});
 
 				vm.listData = results;
-				console.log(vm.listData)
 			}
 		}
 

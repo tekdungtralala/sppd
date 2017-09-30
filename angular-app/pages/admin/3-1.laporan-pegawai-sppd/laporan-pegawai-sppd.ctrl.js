@@ -10,6 +10,7 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
+			vm.search = null;
 			console.log('laporan-pegawai-sppd.ctrl')
 		}
 	}

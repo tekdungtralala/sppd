@@ -13,6 +13,7 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
+			vm.search = '';
 			dataservice.getProvinsi().then( afterGetProvinsi );
 			function afterGetProvinsi( results ) {
 				vm.listData = results;

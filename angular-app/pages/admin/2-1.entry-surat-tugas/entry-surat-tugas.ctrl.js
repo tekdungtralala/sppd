@@ -19,6 +19,7 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
+			vm.search = '';
 			dataservice.getSPPD().then( afterGet );
 			function afterGet( results ) {
 				vm.listData = results;

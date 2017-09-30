@@ -13,6 +13,7 @@
 
 		abstractPage.startCtrl().then( activate );
 		function activate() {
+			vm.search = '';
 			dataservice.getAngkutan().then( afterGet );
 			function afterGet( results ) {
 				vm.listData = results;
