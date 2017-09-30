@@ -67,7 +67,16 @@
 								</td>
 								<td>
 									<p ng-repeat="p in data.officers">
-										{{p.name}} - {{p.reference_number}}
+										{{p.name}} - {{p.reference_number}} 
+										<span ng-show="data.column_e && data.column_f && data.transportation_type">
+											-
+										</span> 
+										<span 
+											ng-show="data.column_e && data.column_f && data.transportation_type"
+											class="glyphicon glyphicon-print"
+											style="cursor: pointer;" 
+											ng-click="vm.printLembar2(p);">
+										</span>
 									</p>
 								</td>
 								<td class="btn-actions">
@@ -80,12 +89,6 @@
 										class="glyphicon glyphicon-pencil"
 										style="margin-right: 10px;" 
 										ng-click="vm.openModal(data, 'data-modal.html', 'lg');"
-										></span>
-									<span 
-										ng-show="data.column_e && data.column_f && data.transportation_type"
-										class="glyphicon glyphicon-print"
-										style="margin-right: 10px;" 
-										ng-click="vm.printLembar2(data);"
 										></span>
 									<span 
 										ng-show="data.column_e && data.column_f && data.transportation_type"
@@ -225,13 +228,6 @@
 			<button type="button" class="btn btn-default pull-left btn-flat"
 				ng-click="vm.closeModal();">
 				Tutup
-			</button>
-			<button type="button" class="btn btn-success btn-flat"
-				ng-show="vm.formValue.showPrintBtn"
-				ng-click="vm.printLembar2( vm.formValue );">
-				<span class="glyphicon glyphicon-print"></span>
-				&nbsp;
-				Cetak
 			</button>
 			<button type="button" class="btn btn-primary btn-flat"
 				ng-click="vm.submit()">
