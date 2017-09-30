@@ -82,6 +82,7 @@
 		vm.provinceChanged = provinceChanged;
 		vm.addOfficerToSPPD = addOfficerToSPPD;
 		vm.removeOfficerFromSPPD = removeOfficerFromSPPD;
+		vm.printLembar1 = printLembar1;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -159,8 +160,13 @@
 					console.log('editSPPD')
 					// dataservice.editSPPD( vm.formValue ).then( closeModal ).then( activate );
 				} else {
-					vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD'),
-					vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD'),
+					var a = moment(vm.formValue.start_date);
+					var b = moment(vm.formValue.end_date);
+					var diff = a.diff(b, 'days');
+					if ( diff < -1 ) diff = -1 * diff;
+					vm.formValue.total_day = diff;
+					vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD');
+					vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD');
 					dataservice.createSPPD( vm.formValue ).then( closeModal ).then( activate );
 				}
 			}
@@ -200,6 +206,9 @@
 				return o.id === oInput.id;
 			})[0];
 			vm.formValue.listOfficers.push( officer );
+		}
+		function printLembar1( data ) {
+			window.open('print-lembar-1.php?sppdId=' + data.id, '_blank');
 		}
 	}
 

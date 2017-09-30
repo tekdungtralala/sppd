@@ -3,13 +3,14 @@
 	if ('POST' === $_SERVER['REQUEST_METHOD']) {
 		$json = file_get_contents('php://input');
 		$person = (array) json_decode($json);
-		$sql = "insert into sppd (id, state, reference_number, start_date, end_date, base, objective, task, description, chief_name) values("
+		$sql = "insert into sppd (id, state, reference_number, start_date, end_date, total_day, base, objective, task, description, chief_name) values("
 			. " NULL, "
 			. " 1, "
 			. " '" . $person['reference_number'] . "', " 
 			. " '" . $person['start_date'] . "', " 
 
 			. " '" . $person['end_date'] . "', " 
+			. " '" . $person['total_day'] . "', " 
 			. " '" . $person['base'] . "', " 
 			. " '" . $person['objective'] . "', " 
 
