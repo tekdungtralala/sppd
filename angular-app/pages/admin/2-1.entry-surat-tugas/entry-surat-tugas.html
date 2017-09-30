@@ -230,7 +230,7 @@
 				Cetak
 			</button>
 			<button type="button" class="btn btn-success btn-flat"
-				ng-click="vm.processToSPD()"
+				ng-click="vm.closeModal();vm.openModal(vm.formValue, 'confirm-to-next-state-modal.html');"
 				ng-hide="!vm.formValue.id">
 				<span class="glyphicon glyphicon-log-in"></span>
 				&nbsp;

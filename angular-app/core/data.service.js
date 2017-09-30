@@ -32,7 +32,8 @@
 			createSPPD: createSPPD,
 			removeSPPD: removeSPPD,
 			continueToInputSPD: continueToInputSPD,
-			getEntrySuratPerjalananDinas: getEntrySuratPerjalananDinas
+			getEntrySuratPerjalananDinas: getEntrySuratPerjalananDinas,
+			updateSPD: updateSPD
 		};
 		return service;
 
@@ -87,6 +88,7 @@
 		function removeSPPD( id ) { return deleteAPI('sppd', id); }
 		function continueToInputSPD( id ) { return $http.post( 'api/sppd/continueToState2.php?id=' + id ); }
 		function getEntrySuratPerjalananDinas() { return $http.get( 'api/sppd/get.php?state=2' ).then( afterGet ); }
+		function updateSPD( data ) { return $http.post( 'api/sppd/updateSPD.php', data ); }
 
 
 		function getAPI( folderName ) {
