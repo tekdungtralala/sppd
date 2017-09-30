@@ -18,17 +18,23 @@
 			. " '" . $person['description'] . "', " 
 			. " '" . $person['chief_name'] . "' " 
 			. " );";
-
 		$conn->query($sql);
 		$sppdID = $conn->insert_id;
-			foreach ($person['officers'] as $o) {
-				$sqlO = "insert into sppd_officer values(null, "
-					. $sppdID .", " 
-					. " '" . $o->name . "',"
-					. " '" . $o->officer_id . "',"
-					. " '" . $o->officeClass->name . "',"
-					. " '" . $o->officePosition->name . "');";
-				$conn->query($sqlO);
-			}
+
+		$sql1 = "select max(id) as max from sppd_officer";
+		$result1 = $conn->query($sql1);
+		$row1 = $result1->fetch_assoc();
+		$maxId = $row1['max'] + 1;
+		foreach ($person['officers'] as $o) {
+			$sqlO = "insert into sppd_officer (id, reference_number, sppd_id, name, officer_id, office_class_name, office_position_name) values(null, "
+				. " '" . $maxId . "/SPD/BTPAL/X/2017', " 
+				. $sppdID . ", " 
+				. " '" . $o->name . "',"
+				. " '" . $o->officer_id . "',"
+				. " '" . $o->officeClass->name . "',"
+				. " '" . $o->officePosition->name . "');";
+			$conn->query($sqlO);
+			$maxId = $maxId + 1;
+		}
 	}
 ?>

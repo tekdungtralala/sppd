@@ -20,7 +20,7 @@
 		abstractPage.startCtrl().then(activate);
 		function activate() {
 			vm.search = '';
-			dataservice.getSPPD().then( afterGet );
+			dataservice.getEntrySuratTugas().then( afterGet );
 			function afterGet( results ) {
 				vm.listData = results;
 				_.forEach( vm.listData, function( d ) {
@@ -37,7 +37,7 @@
 				dataservice.getPegawai(),		// 2
 				dataservice.getJabatan(),		// 3
 				dataservice.getGolongan(),		// 4
-				dataservice.countSPPD(),		// 5
+				dataservice.getMaxIdofSPPD(),	// 5
 			];
 
 			$q.all( promises ).then( afterGetPromises );

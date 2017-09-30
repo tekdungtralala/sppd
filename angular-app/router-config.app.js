@@ -89,6 +89,15 @@
 					titlePage: 'Entry Surat Tugas',
 					isSecure: true
 				})
+				.state('admin.entry-surat-perjalanan-dinas', {
+					url: '/entry-surat-perjalanan-dinas',
+					templateUrl: 'angular-app/pages/admin/2-2.entry-surat-perjalanan-dinas/entry-surat-perjalanan-dinas.html?version=' + window.version,
+					controller: 'entry-surat-perjalanan-dinas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Transaksi',
+					titlePage: 'Entry Perjalanan Dinas',
+					isSecure: true
+				})
 
 
 

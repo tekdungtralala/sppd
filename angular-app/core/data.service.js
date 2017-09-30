@@ -26,12 +26,13 @@
 
 			getBiayaPerjalananDinas: getBiayaPerjalananDinas, createBiayaPerjalananDinas: createBiayaPerjalananDinas, editBiayaPerjalananDinas: editBiayaPerjalananDinas,
 
-			getSPPD: getSPPD,
+			getEntrySuratTugas: getEntrySuratTugas,
 			getSPPDOfficer: getSPPDOfficer,
-			countSPPD: countSPPD,
+			getMaxIdofSPPD: getMaxIdofSPPD,
 			createSPPD: createSPPD,
 			removeSPPD: removeSPPD,
-			continueToInputSPD: continueToInputSPD
+			continueToInputSPD: continueToInputSPD,
+			getEntrySuratPerjalananDinas: getEntrySuratPerjalananDinas
 		};
 		return service;
 
@@ -79,12 +80,13 @@
 		function createBiayaPerjalananDinas( data ) { return postAPI('biaya-perjalanan-dinas', data); }
 		function editBiayaPerjalananDinas( data ) { return putAPI('biaya-perjalanan-dinas', data); }
 
-		function getSPPD() { return getAPI('sppd'); }
+		function getEntrySuratTugas() { return $http.get( 'api/sppd/get.php?state=1' ).then( afterGet ); }
 		function getSPPDOfficer( sppdId ) { return $http.get( 'api/sppd/get_officer.php?sppd_id=' + sppdId ).then( afterGet ); }
-		function countSPPD() { return $http.get( 'api/sppd/count.php' ).then( afterGet ); }
+		function getMaxIdofSPPD() { return $http.get( 'api/sppd/getMaxIdofSPPD.php' ).then( afterGet ); }
 		function createSPPD( data ) { return postAPI('sppd', data); }
 		function removeSPPD( id ) { return deleteAPI('sppd', id); }
 		function continueToInputSPD( id ) { return $http.post( 'api/sppd/continueToState2.php?id=' + id ); }
+		function getEntrySuratPerjalananDinas() { return $http.get( 'api/sppd/get.php?state=2' ).then( afterGet ); }
 
 
 		function getAPI( folderName ) {
