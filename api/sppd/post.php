@@ -26,9 +26,11 @@
 		$row1 = $result1->fetch_assoc();
 		$maxId = $row1['max'] + 1;
 		foreach ($person['officers'] as $o) {
-			$sqlO = "insert into sppd_officer (id, reference_number, sppd_id, name, officer_id, office_class_name, office_position_name) values(null, "
+			$sqlO = "insert into sppd_officer (id, reference_number, sppd_id, committed_officer, committed_officer_id, name, officer_id, office_class_name, office_position_name) values(null, "
 				. " '" . $maxId . "/SPD/BTPAL/X/2017', " 
 				. $sppdID . ", " 
+				. " '" . $person['committed_officer'] . "',"
+				. " '" . $person['committed_officer_id'] . "',"
 				. " '" . $o->name . "',"
 				. " '" . $o->officer_id . "',"
 				. " '" . $o->officeClass->name . "',"

@@ -16,6 +16,8 @@
 		var officers = [];
 		var currentSPPDNumber;
 		var chiefName;
+		var committedOfficerId;
+		var committedOfficer;
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
@@ -62,6 +64,11 @@
 
 					if ( p.name === 'Kepala Balai Teknologi' ) {
 						chiefName = o.name;
+					}
+
+					if (p.name === 'Pejabat Pembuat Komitmen' ) {
+						committedOfficer = o.name;
+						committedOfficerId = o.officer_id;
 					}
 				});
 
@@ -131,6 +138,8 @@
 					listOfficers: angular.copy(officers), 
 					reference_number: currentSPPDNumber + '.a/BTPAL/ST/10/2017',
 					chief_name: chiefName,
+					committed_officer: committedOfficer,
+					committed_officer_id: committedOfficerId
 					// base: 'base....',
 					// task: 'task ....',
 					// description: 'description....'
