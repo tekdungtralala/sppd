@@ -28,7 +28,6 @@
 		vm.submit = submit;
 		vm.remove = remove;
 		vm.closeModal = closeModal;
-
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;

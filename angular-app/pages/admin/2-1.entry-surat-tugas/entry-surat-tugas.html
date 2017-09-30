@@ -83,6 +83,10 @@
 										ng-click="vm.openModal(data, 'confirm-modal.html');"
 										></span>
 									<span 
+										class="glyphicon glyphicon-print"
+										style="margin-right: 10px;"
+										></span>
+									<span 
 										class="glyphicon glyphicon-log-in"
 										ng-click="vm.openModal(data, 'confirm-modal.html');"
 										></span>
@@ -94,5 +98,124 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/ng-template" id="data-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Form Input SPPD</h4>
+		</div>
+		<div class="modal-body">
+
+			<form role="form">
+				<div class="box-body">
+					<div class="form-group" ng-show="vm.formValue.id">
+						<label>Id</label>
+						<input type="text" class="form-control" placeholder="Enter email" disabled
+							ng-model="vm.formValue.id">
+					</div>
+
+					<div class="form-group" ng-show="vm.formValue.reference_number">
+						<label>Nomor Surat</label>
+						<input type="text" class="form-control" placeholder="Enter email" disabled
+							ng-model="vm.formValue.reference_number">
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['base']}">
+						<label>Dasar</label>
+						<textarea class="form-control" rows="3" id="base" ng-model="vm.formValue.base"></textarea>
+					</div>
+
+					<div class="form-group" id="officers" ng-class="{'has-error': vm.hasError['officers']}">
+						<label>Memberi Tugas Kepada</label>
+						<div class="input-group" style="margin-bottom: 5px;">
+							<select class="form-control" ng-model="vm.formValue.officeIdTemp" >
+								<option ng-repeat="option in vm.formValue.listOfficers" value="{{option.id}}">{{option.name}}</option>
+							</select>
+							<span class="input-group-addon" ng-click="vm.addOfficerToSPPD()" style="cursor: pointer;">
+								<i class="fa fa-plus"></i>
+							</span>
+						</div>
+						<div class="input-group" style="margin-bottom: 2px;" ng-repeat="o in vm.formValue.officers">
+							<input type="text" class="form-control" disabled ng-model="o.nameAndOfficeId"
+								style="cursor: default;background: #ffffff;" />
+							<span class="input-group-addon" style="cursor: pointer;" ng-click="vm.removeOfficerFromSPPD( o )"><i class="fa fa-close"></i></span>
+						</div>
+					</div>	
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['start_date']}">
+						<label>Tanggal Mulai</label>
+						<p class="input-group">
+							<input type="text" class="form-control" id="start_date"
+								uib-datepicker-popup
+								ng-model="vm.formValue.start_date" 
+								is-open="startDateOpen"
+								datepicker-options="dateOptions" 
+								close-text="Close"
+								alt-input-formats="altInputFormats" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="startDateOpen = !startDateOpen">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+						</p>
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['end_date']}">
+						<label>Tanggal Selesai</label>
+						<p class="input-group">
+							<input type="text" class="form-control" id="end_date" 
+								uib-datepicker-popup
+								ng-model="vm.formValue.end_date" 
+								is-open="endDateOpen"
+								datepicker-options="dateOptions" 
+								close-text="Close"
+								alt-input-formats="altInputFormats" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="endDateOpen = !endDateOpen">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+						</p>
+					</div>
+
+					<div class="form-group" id="objective" ng-class="{'has-error': vm.hasError['objective']}">
+						<label>Tujuan</label>
+						<select class="form-control" ng-model="vm.formValue.province_id" ng-change="vm.provinceChanged();">
+							<option ng-repeat="option in vm.provinces" value="{{option.id}}">{{option.name}}</option>
+						</select>
+						<br/>
+						<select class="form-control" ng-show="vm.formValue.showCities" ng-model="vm.formValue.objective">
+							<option ng-repeat="option in vm.cities" value="{{option.name}}">{{option.name}}</option>
+						</select>
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['task']}">
+						<label>Tugas</label>
+						<input type="text" class="form-control" placeholder="Tugas" id="task"
+							ng-model="vm.formValue.task">
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': vm.hasError['description']}">
+						<label>Keterangan</label>
+						<textarea class="form-control" rows="3" id="description" ng-model="vm.formValue.description"></textarea>
+					</div>				
+				</div>
+			</form>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();">
+				Tutup
+			</button>
+			<button type="button" class="btn btn-primary btn-flat"
+				ng-click="vm.submit()">
+				Simpan
+			</button>
+		</div>
+	</script>
 
 </div>

@@ -27,7 +27,9 @@
 			getBiayaPerjalananDinas: getBiayaPerjalananDinas, createBiayaPerjalananDinas: createBiayaPerjalananDinas, editBiayaPerjalananDinas: editBiayaPerjalananDinas,
 
 			getSPPD: getSPPD,
-			getSPPDOfficer: getSPPDOfficer
+			getSPPDOfficer: getSPPDOfficer,
+			countSPPD: countSPPD,
+			createSPPD: createSPPD
 		};
 		return service;
 
@@ -77,6 +79,8 @@
 
 		function getSPPD() { return getAPI('sppd'); }
 		function getSPPDOfficer( sppdId ) { return $http.get( 'api/sppd/get_officer.php?sppd_id=' + sppdId ).then( afterGet ); }
+		function countSPPD() { return $http.get( 'api/sppd/count.php' ).then( afterGet ); }
+		function createSPPD( data ) { return postAPI('sppd', data); }
 
 
 		function getAPI( folderName ) {

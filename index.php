@@ -20,6 +20,7 @@
 	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/fastclick/lib/fastclick.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/lodash/dist/lodash.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/moment/min/moment.min.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="bower_components/angular/angular.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js?version=<?php echo(rand()); ?>"></script>
