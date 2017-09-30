@@ -84,6 +84,7 @@
 		vm.addOfficerToSPPD = addOfficerToSPPD;
 		vm.removeOfficerFromSPPD = removeOfficerFromSPPD;
 		vm.printLembar1 = printLembar1;
+		vm.processToSPD = processToSPD;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -195,7 +196,6 @@
 				vm.hasError['officers'] = true;
 				return;
 			}
-
 			var officer = _.remove( vm.formValue.listOfficers, function( o ) {
 				return o.id === vm.formValue.officeIdTemp;
 			})[0];
@@ -210,6 +210,9 @@
 		}
 		function printLembar1( data ) {
 			window.open('print-lembar-1.php?sppdId=' + data.id, '_blank');
+		}
+		function processToSPD() {
+			dataservice.continueToInputSPD( vm.formValue.id ).then( closeModal ).then( activate );
 		}
 	}
 

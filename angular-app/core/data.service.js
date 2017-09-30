@@ -30,7 +30,8 @@
 			getSPPDOfficer: getSPPDOfficer,
 			countSPPD: countSPPD,
 			createSPPD: createSPPD,
-			removeSPPD: removeSPPD
+			removeSPPD: removeSPPD,
+			continueToInputSPD: continueToInputSPD
 		};
 		return service;
 
@@ -83,6 +84,7 @@
 		function countSPPD() { return $http.get( 'api/sppd/count.php' ).then( afterGet ); }
 		function createSPPD( data ) { return postAPI('sppd', data); }
 		function removeSPPD( id ) { return deleteAPI('sppd', id); }
+		function continueToInputSPD( id ) { return $http.post( 'api/sppd/continueToState2.php?id=' + id ); }
 
 
 		function getAPI( folderName ) {
