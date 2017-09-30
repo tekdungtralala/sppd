@@ -134,7 +134,7 @@
 			}
 		}
 		function remove() {
-			// dataservice.removeJabatan(vm.formValue.id).then(closeModal).then(activate);
+			dataservice.removeSPPD(vm.formValue.id).then(closeModal).then(activate);
 		}
 		function closeModal() {
 			if (modalInstance && modalInstance.dismiss) modalInstance.dismiss();

@@ -29,7 +29,8 @@
 			getSPPD: getSPPD,
 			getSPPDOfficer: getSPPDOfficer,
 			countSPPD: countSPPD,
-			createSPPD: createSPPD
+			createSPPD: createSPPD,
+			removeSPPD: removeSPPD
 		};
 		return service;
 
@@ -81,6 +82,7 @@
 		function getSPPDOfficer( sppdId ) { return $http.get( 'api/sppd/get_officer.php?sppd_id=' + sppdId ).then( afterGet ); }
 		function countSPPD() { return $http.get( 'api/sppd/count.php' ).then( afterGet ); }
 		function createSPPD( data ) { return postAPI('sppd', data); }
+		function removeSPPD( id ) { return deleteAPI('sppd', id); }
 
 
 		function getAPI( folderName ) {
