@@ -90,10 +90,42 @@
 
 			if ( data ) {
 				vm.formValue = angular.copy(data);
+				vm.formValue.start_date = moment(vm.formValue.start_date, 'YYYY-MM-DD').toDate();
+				vm.formValue.end_date = moment(vm.formValue.end_date, 'YYYY-MM-DD').toDate();
+
+				try {
+					var city = _.find( cities, function( c ){
+						return c.name === vm.formValue.objective;
+					} );
+					var province = _.find( vm.provinces, function( p ) {
+						return p.id === city.province_id;
+					});
+
+					if ( province ) {
+						vm.formValue.province_id = province.id;
+						vm.formValue.showCities = true;
+
+						vm.cities = [];
+						_.forEach( cities, function( c ) {
+							if ( c.province_id === vm.formValue.province_id ) {
+								vm.cities.push( c );
+							}
+						});
+					}
+				} catch (err) {}
+				vm.formValue.listOfficers = angular.copy(officers);
+				_.forEach( vm.formValue.officers, function( o ) {
+					o.nameAndOfficeId = o.name + ' - ' + o.officer_id;
+
+					_.remove(vm.formValue.listOfficers, function(officer) {
+						return officers.id === o.officer_id;
+					});
+				});
+
 			} else {
 				vm.formValue = {
 					officers: [],
-					listOfficers: officers, 
+					listOfficers: angular.copy(officers), 
 					reference_number: currentSPPDNumber + '.a/BTPAL/ST/10/2017',
 					chief_name: chiefName,
 					// base: 'base....',
@@ -123,9 +155,9 @@
 			if (Object.keys(vm.hasError).length > 0) {
 				helper.setFocus(Object.keys(vm.hasError)[0]);
 			} else {
-				console.log('else')
 				if ( vm.formValue.id ) {
-					// dataservice.editJabatan( vm.formValue ).then( closeModal ).then( activate );
+					console.log('editSPPD')
+					// dataservice.editSPPD( vm.formValue ).then( closeModal ).then( activate );
 				} else {
 					vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD'),
 					vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD'),

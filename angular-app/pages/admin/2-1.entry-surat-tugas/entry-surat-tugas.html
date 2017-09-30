@@ -73,6 +73,7 @@
 								</td>
 								<td class="btn-actions">
 									<span 
+										ng-hide="true"
 										class="glyphicon glyphicon-pencil"
 										style="margin-right: 10px;" 
 										ng-click="vm.openModal(data, 'data-modal.html');"
@@ -113,14 +114,12 @@
 				<div class="box-body">
 					<div class="form-group" ng-show="vm.formValue.id">
 						<label>Id</label>
-						<input type="text" class="form-control" placeholder="Enter email" disabled
-							ng-model="vm.formValue.id">
+						<input type="text" class="form-control" disabled ng-model="vm.formValue.id">
 					</div>
 
 					<div class="form-group" ng-show="vm.formValue.reference_number">
 						<label>Nomor Surat</label>
-						<input type="text" class="form-control" placeholder="Enter email" disabled
-							ng-model="vm.formValue.reference_number">
+						<input type="text" class="form-control" disabled style="cursor: default;" ng-model="vm.formValue.reference_number">
 					</div>
 
 					<div class="form-group" ng-class="{'has-error': vm.hasError['base']}">
