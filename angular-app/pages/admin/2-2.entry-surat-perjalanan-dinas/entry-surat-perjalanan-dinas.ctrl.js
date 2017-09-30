@@ -29,7 +29,6 @@
 
 			dataservice.getMataAnggaran().then( afterGetMataAnggaran );
 			function afterGetMataAnggaran( results ) {
-				console.log( results );
 				vm.listBudgetType = [];
 				_.forEach( results, function( r ) {
 					var finded = _.find( vm.listBudgetType, function( f ) {
@@ -59,6 +58,7 @@
 		vm.closeModal = closeModal;
 		vm.columnEChanged = columnEChanged;
 		vm.printLembar2 = printLembar2;
+		vm.processToBiayaPerjalanan = processToBiayaPerjalanan;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -116,7 +116,11 @@
 			}
 		}
 		function printLembar2( data ) {
-			console.log('printLembar2 : ', data);
+			window.open('print-lembar-2.php?id=' + data.id, '_blank');
+		}
+		function processToBiayaPerjalanan() {
+			dataservice.continueToInputBiaya( vm.formValue.id ).then( closeModal ).then( activate );
 		}
 	}
+
 })();

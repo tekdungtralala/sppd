@@ -33,7 +33,8 @@
 			removeSPPD: removeSPPD,
 			continueToInputSPD: continueToInputSPD,
 			getEntrySuratPerjalananDinas: getEntrySuratPerjalananDinas,
-			updateSPD: updateSPD
+			updateSPD: updateSPD,
+			continueToInputBiaya: continueToInputBiaya
 		};
 		return service;
 
@@ -89,6 +90,7 @@
 		function continueToInputSPD( id ) { return $http.post( 'api/sppd/continueToState2.php?id=' + id ); }
 		function getEntrySuratPerjalananDinas() { return $http.get( 'api/sppd/get.php?state=2' ).then( afterGet ); }
 		function updateSPD( data ) { return $http.post( 'api/sppd/updateSPD.php', data ); }
+		function continueToInputBiaya( id ) { return $http.post( 'api/sppd/continueToState3.php?id=' + id ); }
 
 
 		function getAPI( folderName ) {
