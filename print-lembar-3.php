@@ -24,4 +24,6 @@ echo "jumlah : ". $row['total_cost']. "<br/>";
 echo "terbilang : ". $row['total_cost_rp']. "<br/>";
 echo "nama bendahara : ". $row['treasurer_officer']. "<br/>";
 echo "nip bendahara : ". $row['treasurer_officer_id']. "<br/>";
+echo "nama pejabat pembuat komitmen : ". $row['committed_officer']. "<br/>";
+echo "nip pejabat : ". $row['committed_officer_id']. "<br/>";
 ?>

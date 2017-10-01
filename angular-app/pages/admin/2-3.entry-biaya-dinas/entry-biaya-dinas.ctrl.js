@@ -21,13 +21,17 @@
 			$q.all( promises ).then( afterGetAll );
 			function afterGetAll( responses ) {
 				vm.listData = responses[0];
-				_.forEach( vm.listData, function( d ) {
-					dataservice.getSPPDOfficer( d.id ).then( afterGetSPPDOfficer );
+				_.forEach( vm.listData, function( data ) {
+					dataservice.getSPPDOfficer( data.id ).then( afterGetSPPDOfficer );
 					function afterGetSPPDOfficer( officers ) {
-						d.officers = officers;
-						_.forEach( d.officers, function( d ) {
+						data.officers = officers;
+						_.forEach( data.officers, function( d ) {
 							if ( d.transportation_cost ) d.transportCostRP = helper.toRp( d.transportation_cost );
 							if ( d.total_cost ) d.totalCostRP = helper.toRp( d.total_cost );
+
+							try {
+								if ( !data.transport ) data.transport = parseInt( d.transportation_cost );
+							} catch (err) {}
 						});
 					}
 				});
@@ -46,6 +50,7 @@
 		vm.closeModal = closeModal;
 		vm.transportCostChanged = transportCostChanged;
 		vm.printLembar3 = printLembar3;
+		vm.processToBuktiKas = processToBuktiKas;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -56,8 +61,6 @@
 				_.forEach( vm.formValue.officers, function( o ) {
 					o.total_daily_costRP = helper.toRp( o.total_daily_cost );
 					o.total_lodging_costRP = helper.toRp( o.total_lodging_cost );
-
-					if ( !vm.formValue.transport ) vm.formValue.transport = parseInt( o.transportation_cost );
 				});
 				if ( vm.formValue.transport ) vm.transportCostChanged();
 			} else vm.formValue = {};
@@ -108,6 +111,9 @@
 		}
 		function printLembar3( data ) {
 			window.open('print-lembar-3.php?id=' + data.id, '_blank');
+		}
+		function processToBuktiKas() {
+			dataservice.continueToBuktiKas( vm.formValue.id ).then( closeModal ).then( activate );
 		}
 	}
 

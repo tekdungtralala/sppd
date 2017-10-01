@@ -4,6 +4,7 @@
 			width: 90%;
 		}
 	</style>
+
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
@@ -90,7 +91,7 @@
 										ng-click="vm.openModal(data, 'data-modal.html', 'lg', 'input-biaya');"
 										></span>
 									<span 
-										ng-show="false"
+										ng-show="data.transport"
 										class="glyphicon glyphicon-log-in"
 										ng-click="vm.openModal(data, 'confirm-to-next-state-modal.html');"
 										></span>
@@ -193,6 +194,31 @@
 			<button type="button" class="btn btn-danger btn-flat"
 				ng-click="vm.remove()">
 				Hapus
+			</button>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="confirm-to-next-state-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Confirmation</h4>
+		</div>
+		<div class="modal-body">
+			<p>Tolong pastikan semua data sudah benar<br/>anda yakin ingin melanjutkan SPPD ini ?</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();">
+				Batal
+			</button>
+			<button type="button" class="btn btn-success btn-flat"
+				ng-click="vm.processToBuktiKas();">
+				<span class="glyphicon glyphicon-log-in"></span>
+				&nbsp;
+				Input Bukti KAS/Bank Pengeluaran
 			</button>
 		</div>
 	</script>

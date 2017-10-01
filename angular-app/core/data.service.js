@@ -37,7 +37,8 @@
 			continueToInputBiaya: continueToInputBiaya,
 			updateSPPDOfficerBiaya: updateSPPDOfficerBiaya,
 			getEntryBiayaSPD: getEntryBiayaSPD,
-			updateSPPDOfficerTotal: updateSPPDOfficerTotal
+			updateSPPDOfficerTotal: updateSPPDOfficerTotal,
+			continueToBuktiKas: continueToBuktiKas
 		};
 		return service;
 
@@ -97,6 +98,7 @@
 		function updateSPPDOfficerBiaya( data ) { return $http.post( 'api/sppd/updateSPPDOfficerBiaya.php', data ); }
 		function getEntryBiayaSPD() { return $http.get( 'api/sppd/get.php?state=3' ).then( afterGet ); }
 		function updateSPPDOfficerTotal( data ) { return $http.post( 'api/sppd/updateSPPDOfficerTotal.php', data ); }
+		function continueToBuktiKas( id ) { return $http.post( 'api/sppd/continueToState4.php?id=' + id ); }
 
 
 		function getAPI( folderName ) {
