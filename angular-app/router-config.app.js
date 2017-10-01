@@ -107,6 +107,16 @@
 					titlePage: 'Entry Biaya Dinas',
 					isSecure: true
 				})
+				.state('admin.entry-bukti-kas', {
+					url: '/entry-bukti-kas',
+					templateUrl: 'angular-app/pages/admin/2-4.entry-bukti-kas/entry-bukti-kas.html?version=' + window.version,
+					controller: 'entry-bukti-kas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Transaksi',
+					titlePage: 'Entry Bukti Kas',
+					isSecure: true
+				})
+				
 
 
 
