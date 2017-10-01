@@ -179,4 +179,29 @@
 			</button>
 		</div>
 	</script>
+
+	<script type="text/ng-template" id="confirm-to-next-state-modal.html">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+				ng-click="vm.closeModal()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Confirmation</h4>
+		</div>
+		<div class="modal-body">
+			<p>Tolong pastikan semua data sudah benar<br/>anda yakin ingin menutup laporan ini ?</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left btn-flat"
+				ng-click="vm.closeModal();">
+				Batal
+			</button>
+			<button type="button" class="btn btn-success btn-flat"
+				ng-click="vm.closeTheReport();">
+				<span class="glyphicon glyphicon-log-in"></span>
+				&nbsp;
+				Selesai
+			</button>
+		</div>
+	</script>
 </div>

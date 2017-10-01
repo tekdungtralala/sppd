@@ -39,6 +39,8 @@
 		vm.submit = submit;
 		vm.remove = remove;
 		vm.closeModal = closeModal;
+		vm.printLembar5 = printLembar5;
+		vm.closeTheReport = closeTheReport;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -81,6 +83,12 @@
 		}
 		function closeModal() {
 			if (modalInstance && modalInstance.dismiss) modalInstance.dismiss();
+		}
+		function printLembar5( data ) {
+			window.open('print-lembar-5.php?id=' + data.id, '_blank');
+		}
+		function closeTheReport() {
+			dataservice.closeTheReport( vm.formValue.id ).then( closeModal ).then( activate );
 		}
 	}
 
