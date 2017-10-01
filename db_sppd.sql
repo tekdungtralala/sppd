@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 01, 2017 at 02:30 AM
+-- Generation Time: Oct 01, 2017 at 03:17 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.7
 
@@ -225,15 +225,17 @@ CREATE TABLE `sppd` (
 --
 
 INSERT INTO `sppd` (`id`, `state`, `reference_number`, `start_date`, `end_date`, `total_day`, `base`, `objective`, `task`, `description`, `chief_name`, `transportation_type`, `column_e`, `column_f`) VALUES
-(5, 2, '3.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-03', 3, 'dasar', 'Brebes', 'tugas', 'keterangan', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
+(5, 3, '3.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-03', 3, 'dasar', 'Brebes', 'tugas', 'keterangan', 'Ir. Setiyono, M.Si', 'Gojeg', '3470.004.011', '524112'),
 (6, 3, '2.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-04', 4, 'Dasar1', 'Cirebon', 'Tigas', 'Keterangan', 'Ir. Setiyono, M.Si', 'Kereta Api', '3470.004.011', '524111'),
-(7, 3, '7.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-05', 5, 'd', 'Brebes', 'asdf', 'safd', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112'),
+(7, 4, '7.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-05', 5, 'd', 'Brebes', 'asdf', 'safd', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112'),
 (8, 1, '8.a/BTPAL/ST/10/2017', '2017-09-08', '2017-09-16', 8, 'asfdasdf', 'Cirebon', 'sadf', 'asdf', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
 (12, 3, '9.a/BTPAL/ST/10/2017', '2017-09-09', '2017-09-16', 7, 'test1', 'Jakarta Timur', 'test1', 'test1', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.011', '524112'),
 (15, 2, '9.a/BTPAL/ST/10/2017', '2017-09-09', '2017-09-16', 7, 'test1', 'Jakarta Timur', 'test1', 'test1', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
 (17, 1, '17.a/BTPAL/ST/10/2017', '2017-09-12', '2017-09-11', 1, '17', 'Jakarta Timur', '17', '17', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
 (18, 1, '18.a/BTPAL/ST/10/2017', '2017-09-15', '2017-09-14', 1, '18', 'Jakarta Timur', '18', '18', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
-(20, 1, '19.a/BTPAL/ST/10/2017', '2017-09-06', '2017-09-07', -1, '19', 'Jakarta Utara', '19', '19', 'Ir. Setiyono, M.Si', NULL, NULL, NULL);
+(20, 1, '19.a/BTPAL/ST/10/2017', '2017-09-06', '2017-09-07', 1, '19', 'Jakarta Utara', '19', '19', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
+(21, 5, '21.a/BTPAL/ST/10/2017', '2017-10-09', '2017-10-11', 2, 'Dua satu', 'Kendal', 'Dua satu', 'Dua satu', 'Ir. Setiyono, M.Si', 'Gojeg', '3470.004.022', '9843.002'),
+(27, 1, '22.a/BTPAL/ST/10/2017', '2017-10-01', '2017-10-02', 1, 'Test 22', 'Jakarta Timur', 'Test 22', 'Test 22', 'Ir. Setiyono, M.Si', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -257,28 +259,37 @@ CREATE TABLE `sppd_officer` (
   `lodging_cost` varchar(100) DEFAULT NULL,
   `total_daily_cost` varchar(100) DEFAULT NULL,
   `total_lodging_cost` varchar(100) DEFAULT NULL,
-  `transportation_cost` varchar(100) DEFAULT NULL
+  `transportation_cost` varchar(100) DEFAULT NULL,
+  `total_cost` varchar(100) DEFAULT NULL,
+  `total_cost_rp` varchar(1000) DEFAULT NULL,
+  `kas_reference_number` varchar(100) DEFAULT NULL,
+  `kas_year` varchar(100) DEFAULT NULL,
+  `kas_cost_center_code` varchar(100) DEFAULT NULL,
+  `kas_description` varchar(10000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sppd_officer`
 --
 
-INSERT INTO `sppd_officer` (`id`, `reference_number`, `committed_officer`, `committed_officer_id`, `sppd_id`, `name`, `officer_id`, `office_class_name`, `office_position_name`, `treasurer_officer`, `treasurer_officer_id`, `daily_cost`, `lodging_cost`, `total_daily_cost`, `total_lodging_cost`, `transportation_cost`) VALUES
-(6, '6/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 1', '43234234', '2B', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, '7/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 3', '43234234', '2D', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, '13/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 6, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '220000', '220000', '880000', '880000', NULL),
-(14, '14/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 2', '43234234', '2C', 'Bendahara', 'Pegawai 2', '222222222', '270000', '270000', '1350000', '1350000', NULL),
-(15, '15/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 1', '43234234', '2B', 'Staff', 'Pegawai 2', '222222222', '260001', '260000', '1300005', '1300000', NULL),
-(16, '16/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 3', '43234234', '2D', 'Staff', 'Pegawai 2', '222222222', '280000', '280000', '1400000', '1400000', NULL),
-(17, '17/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, '18/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Pegawai 2', '43234234', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, '19/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 12, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '160000', '160000', '1120000', '1120000', NULL),
-(25, '20/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 15, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, '26/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 17, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, '30/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 18, 'Pegawai 1', '111111111', '2B', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, '31/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 3', '333333333', '2D', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, '32/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 2', '222222222', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `sppd_officer` (`id`, `reference_number`, `committed_officer`, `committed_officer_id`, `sppd_id`, `name`, `officer_id`, `office_class_name`, `office_position_name`, `treasurer_officer`, `treasurer_officer_id`, `daily_cost`, `lodging_cost`, `total_daily_cost`, `total_lodging_cost`, `transportation_cost`, `total_cost`, `total_cost_rp`, `kas_reference_number`, `kas_year`, `kas_cost_center_code`, `kas_description`) VALUES
+(6, '6/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 1', '43234234', '2B', 'Staff', 'Pegawai 2', '222222222', '260001', '260000', '780003', '780000', NULL, NULL, NULL, '6/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(7, '7/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 3', '43234234', '2D', 'Staff', 'Pegawai 2', '222222222', '280000', '280000', '840000', '840000', NULL, NULL, NULL, '7/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(13, '13/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 6, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '220000', '220000', '880000', '880000', NULL, NULL, NULL, '13/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(14, '14/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 2', '43234234', '2C', 'Bendahara', 'Pegawai 2', '222222222', '270000', '270000', '1350000', '1350000', '10000', '2710000', 'Dua Juta Tujuh Ratus Sepuluh Ribu Rupiah', '14/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(15, '15/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 1', '43234234', '2B', 'Staff', 'Pegawai 2', '222222222', '260001', '260000', '1300005', '1300000', '10000', '2610005', 'Dua Juta Enam Ratus Sepuluh Ribu Lima Rupiah', '15/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(16, '16/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 3', '43234234', '2D', 'Staff', 'Pegawai 2', '222222222', '280000', '280000', '1400000', '1400000', '10000', '2810000', 'Dua Juta Delapan Ratus Sepuluh Ribu Rupiah', '16/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(17, '17/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '17/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(18, '18/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Pegawai 2', '43234234', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(19, '19/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 12, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '160000', '160000', '1120000', '1120000', NULL, NULL, NULL, '19/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(25, '20/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 15, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '20/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(29, '26/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 17, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '21/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(30, '30/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 18, 'Pegawai 1', '111111111', '2B', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '30/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(32, '31/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 3', '333333333', '2D', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '31/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(33, '32/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 2', '222222222', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '32/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(34, '34/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 21, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '280000', '280000', '560000', '560000', '400000', '1520000', 'Satu Juta Lima Ratus Dua Puluh Ribu Rupiah', '34/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', 'Pembayaran atas biaya perjalanan SPD 3 hari \ntgl 18-20 sesuai dengan peraturan yang tersedia'),
+(35, '35/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 21, 'Drs. Djoko Prasetyo', '1952423432', '2B', 'Pejabat Pembuat Komitmen', 'Pegawai 2', '222222222', '260001', '260000', '520002', '520000', '400000', '1440002', 'Satu Juta Empat Ratus Empat Puluh Ribu Dua Rupiah', '35/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', 'Pembayaran atas biaya perjalanan SPD 3 hari \ntgl 18-20 sesuai dengan peraturan yang tersedia'),
+(41, '36/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 27, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '36/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -471,12 +482,12 @@ ALTER TABLE `province`
 -- AUTO_INCREMENT for table `sppd`
 --
 ALTER TABLE `sppd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `sppd_officer`
 --
 ALTER TABLE `sppd_officer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `transport`
 --
