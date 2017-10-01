@@ -40,7 +40,8 @@
 			updateSPPDOfficerTotal: updateSPPDOfficerTotal,
 			continueToBuktiKas: continueToBuktiKas,
 			getEntryKas: getEntryKas,
-			updateSPPDOfficerKas: updateSPPDOfficerKas
+			updateSPPDOfficerKas: updateSPPDOfficerKas,
+			continueToInputHasil: continueToInputHasil
 		};
 		return service;
 
@@ -103,6 +104,7 @@
 		function continueToBuktiKas( id ) { return $http.post( 'api/sppd/continueToState4.php?id=' + id ); }
 		function getEntryKas() { return $http.get( 'api/sppd/get.php?state=4' ).then( afterGet ); }
 		function updateSPPDOfficerKas( data ) { return $http.post( 'api/sppd/updateSPPDOfficerKas.php', data ); }
+		function continueToInputHasil( id ) { return $http.post( 'api/sppd/continueToState5.php?id=' + id ); }
 
 		function getAPI( folderName ) {
 			return $http.get( 'api/' + folderName + '/get.php' ).then( afterGet );

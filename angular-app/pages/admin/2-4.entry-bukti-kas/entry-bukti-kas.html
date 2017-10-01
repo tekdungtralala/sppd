@@ -51,6 +51,13 @@
 								<td>
 									<p ng-repeat="p in data.officers">
 										{{p.kas_reference_number}}
+										&nbsp;
+										<span 
+											ng-show="data.kasCode && data.kasDescription"
+											class="glyphicon glyphicon-print"
+											style="cursor: pointer;" 
+											ng-click="vm.printLembar4(p);">
+										</span>
 									</p>
 								</td>
 								<td>
@@ -62,24 +69,21 @@
 									{{data.kasCode}}
 								</td>
 								<td>
-									{{data.kasDescription}}
+									{{ data.kasDescription ? ( data.kasDescription | limitTo:30 ) + ( data.kasDescription.length > 30 ? '...' : '' ) : '' }}
 								</td>
 								<td class="btn-actions">
 									<span 
 										class="glyphicon glyphicon-remove"
 										style="margin-right: 10px;" 
-										ng-click="vm.openModal(data, 'confirm-modal.html');"
-										></span>
+										ng-click="vm.openModal(data, 'confirm-modal.html');"></span>
 									<span 
 										class="glyphicon glyphicon-pencil"
 										style="margin-right: 10px;" 
-										ng-click="vm.openModal(data, 'data-modal.html', 'lg', 'input-biaya');"
-										></span>
+										ng-click="vm.openModal(data, 'data-modal.html', 'lg', 'input-biaya');"></span>
 									<span 
 										ng-show="data.kasCode && data.kasDescription"
 										class="glyphicon glyphicon-log-in"
-										ng-click="vm.openModal(data, 'confirm-to-next-state-modal.html');"
-										></span>
+										ng-click="vm.openModal(data, 'confirm-to-next-state-modal.html');"></span>
 								</td>
 							</tr>
 						</tbody>

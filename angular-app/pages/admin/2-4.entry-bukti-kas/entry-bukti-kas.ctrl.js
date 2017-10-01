@@ -47,7 +47,8 @@
 		vm.submit = submit;
 		vm.remove = remove;
 		vm.closeModal = closeModal;
-
+		vm.printLembar4 = printLembar4;
+		vm.processToHasilDinas = processToHasilDinas;
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
@@ -101,7 +102,12 @@
 		function closeModal() {
 			if (modalInstance && modalInstance.dismiss) modalInstance.dismiss();
 		}
-
+		function printLembar4( data ) {
+			window.open('print-lembar-4.php?id=' + data.id, '_blank');
+		}
+		function processToHasilDinas() {
+			dataservice.continueToInputHasil( vm.formValue.id ).then( closeModal ).then( activate );
+		}
 	}
 
 })();
