@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 30, 2017 at 06:55 PM
+-- Generation Time: Oct 01, 2017 at 02:30 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.7
 
@@ -225,11 +225,11 @@ CREATE TABLE `sppd` (
 --
 
 INSERT INTO `sppd` (`id`, `state`, `reference_number`, `start_date`, `end_date`, `total_day`, `base`, `objective`, `task`, `description`, `chief_name`, `transportation_type`, `column_e`, `column_f`) VALUES
-(5, 2, '3.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-03', 3, 'dasar', 'Brebes', 'tugas', 'keterangan', 'Ir. Setiyono, M.Si', 'Kereta Api', NULL, NULL),
-(6, 2, '2.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-04', 4, 'Dasar1', 'Cirebon', 'Tigas', 'Keterangan', 'Ir. Setiyono, M.Si', 'Gojeg', '3470.004.011', '524112'),
-(7, 2, '7.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-05', 5, 'd', 'Brebes', 'asdf', 'safd', 'Ir. Setiyono, M.Si', NULL, '3470.004.011', '524112'),
+(5, 2, '3.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-03', 3, 'dasar', 'Brebes', 'tugas', 'keterangan', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
+(6, 3, '2.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-04', 4, 'Dasar1', 'Cirebon', 'Tigas', 'Keterangan', 'Ir. Setiyono, M.Si', 'Kereta Api', '3470.004.011', '524111'),
+(7, 3, '7.a/BTPAL/ST/10/2017', '2017-09-01', '2017-09-05', 5, 'd', 'Brebes', 'asdf', 'safd', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112'),
 (8, 1, '8.a/BTPAL/ST/10/2017', '2017-09-08', '2017-09-16', 8, 'asfdasdf', 'Cirebon', 'sadf', 'asdf', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
-(12, 2, '9.a/BTPAL/ST/10/2017', '2017-09-09', '2017-09-16', 7, 'test1', 'Jakarta Timur', 'test1', 'test1', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.011', '524112'),
+(12, 3, '9.a/BTPAL/ST/10/2017', '2017-09-09', '2017-09-16', 7, 'test1', 'Jakarta Timur', 'test1', 'test1', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.011', '524112'),
 (15, 2, '9.a/BTPAL/ST/10/2017', '2017-09-09', '2017-09-16', 7, 'test1', 'Jakarta Timur', 'test1', 'test1', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
 (17, 1, '17.a/BTPAL/ST/10/2017', '2017-09-12', '2017-09-11', 1, '17', 'Jakarta Timur', '17', '17', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
 (18, 1, '18.a/BTPAL/ST/10/2017', '2017-09-15', '2017-09-14', 1, '18', 'Jakarta Timur', '18', '18', 'Ir. Setiyono, M.Si', NULL, NULL, NULL),
@@ -250,28 +250,35 @@ CREATE TABLE `sppd_officer` (
   `name` varchar(100) NOT NULL,
   `officer_id` varchar(100) NOT NULL,
   `office_class_name` varchar(100) NOT NULL,
-  `office_position_name` varchar(100) NOT NULL
+  `office_position_name` varchar(100) NOT NULL,
+  `treasurer_officer` varchar(100) DEFAULT NULL,
+  `treasurer_officer_id` varchar(100) DEFAULT NULL,
+  `daily_cost` varchar(100) DEFAULT NULL,
+  `lodging_cost` varchar(100) DEFAULT NULL,
+  `total_daily_cost` varchar(100) DEFAULT NULL,
+  `total_lodging_cost` varchar(100) DEFAULT NULL,
+  `transportation_cost` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sppd_officer`
 --
 
-INSERT INTO `sppd_officer` (`id`, `reference_number`, `committed_officer`, `committed_officer_id`, `sppd_id`, `name`, `officer_id`, `office_class_name`, `office_position_name`) VALUES
-(6, '6/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 1', '43234234', '2B', 'Staff'),
-(7, '7/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 3', '43234234', '2D', 'Staff'),
-(13, '13/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 6, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi'),
-(14, '14/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 2', '43234234', '2C', 'Bendahara'),
-(15, '15/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 1', '43234234', '2B', 'Staff'),
-(16, '16/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 3', '43234234', '2D', 'Staff'),
-(17, '17/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi'),
-(18, '18/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Pegawai 2', '43234234', '2C', 'Bendahara'),
-(19, '19/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 12, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi'),
-(25, '20/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 15, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi'),
-(29, '26/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 17, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi'),
-(30, '30/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 18, 'Pegawai 1', '111111111', '2B', 'Staff'),
-(32, '31/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 3', '333333333', '2D', 'Staff'),
-(33, '32/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 2', '222222222', '2C', 'Bendahara');
+INSERT INTO `sppd_officer` (`id`, `reference_number`, `committed_officer`, `committed_officer_id`, `sppd_id`, `name`, `officer_id`, `office_class_name`, `office_position_name`, `treasurer_officer`, `treasurer_officer_id`, `daily_cost`, `lodging_cost`, `total_daily_cost`, `total_lodging_cost`, `transportation_cost`) VALUES
+(6, '6/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 1', '43234234', '2B', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, '7/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 5, 'Pegawai 3', '43234234', '2D', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, '13/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 6, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '220000', '220000', '880000', '880000', NULL),
+(14, '14/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 2', '43234234', '2C', 'Bendahara', 'Pegawai 2', '222222222', '270000', '270000', '1350000', '1350000', NULL),
+(15, '15/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 1', '43234234', '2B', 'Staff', 'Pegawai 2', '222222222', '260001', '260000', '1300005', '1300000', NULL),
+(16, '16/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 7, 'Pegawai 3', '43234234', '2D', 'Staff', 'Pegawai 2', '222222222', '280000', '280000', '1400000', '1400000', NULL),
+(17, '17/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, '18/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 8, 'Pegawai 2', '43234234', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, '19/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 12, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Pegawai 2', '222222222', '160000', '160000', '1120000', '1120000', NULL),
+(25, '20/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 15, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, '26/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 17, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, '30/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 18, 'Pegawai 1', '111111111', '2B', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, '31/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 3', '333333333', '2D', 'Staff', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, '32/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 20, 'Pegawai 2', '222222222', '2C', 'Bendahara', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -305,7 +312,7 @@ CREATE TABLE `travel_expenses` (
   `id` int(11) NOT NULL,
   `office_class_id` int(11) NOT NULL,
   `province_id` int(11) NOT NULL,
-  `transportation_costs` int(100) NOT NULL,
+  `daily_cost` int(100) NOT NULL,
   `lodging_cost` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -313,33 +320,33 @@ CREATE TABLE `travel_expenses` (
 -- Dumping data for table `travel_expenses`
 --
 
-INSERT INTO `travel_expenses` (`id`, `office_class_id`, `province_id`, `transportation_costs`, `lodging_cost`) VALUES
-(2, 1, 2, 430123, 435000),
+INSERT INTO `travel_expenses` (`id`, `office_class_id`, `province_id`, `daily_cost`, `lodging_cost`) VALUES
+(2, 1, 2, 170000, 170000),
 (4, 1, 2, 430000, 435000),
 (5, 1, 2, 430000, 435000),
-(6, 1, 6, 300000, 330000),
-(7, 2, 6, 100000, 100000),
-(8, 3, 6, 100000, 100000),
-(9, 4, 6, 100000, 100000),
-(10, 5, 6, 100000, 100000),
-(11, 6, 6, 100000, 100000),
-(12, 2, 2, 100000, 100000),
-(13, 3, 2, 100000, 100000),
-(14, 4, 2, 100000, 100000),
-(15, 5, 2, 100000, 100000),
-(16, 6, 2, 100000, 100000),
-(17, 1, 4, 100000, 100000),
-(18, 2, 4, 100000, 100000),
-(19, 3, 4, 100000, 100000),
-(20, 4, 4, 100000, 100000),
-(21, 5, 4, 100000, 100000),
-(22, 6, 4, 100000, 100000),
-(23, 1, 5, 100000, 100000),
-(24, 2, 5, 100000, 100000),
-(25, 3, 5, 100000, 100000),
-(26, 4, 5, 100000, 100000),
-(27, 5, 5, 100000, 100000),
-(28, 6, 5, 100000, 100000);
+(6, 1, 6, 110002, 110003),
+(7, 2, 6, 120000, 120000),
+(8, 3, 6, 130000, 130000),
+(9, 4, 6, 140000, 140000),
+(10, 5, 6, 150000, 150000),
+(11, 6, 6, 160000, 160000),
+(12, 2, 2, 180000, 180000),
+(13, 3, 2, 190000, 190000),
+(14, 4, 2, 200000, 200000),
+(15, 5, 2, 210000, 210000),
+(16, 6, 2, 220000, 220000),
+(17, 1, 4, 230000, 230000),
+(18, 2, 4, 240000, 240000),
+(19, 3, 4, 250000, 250000),
+(20, 4, 4, 260001, 260000),
+(21, 5, 4, 270000, 270000),
+(22, 6, 4, 280000, 280000),
+(23, 1, 5, 290000, 290000),
+(24, 2, 5, 300000, 300000),
+(25, 3, 5, 310000, 310000),
+(26, 4, 5, 320000, 320000),
+(27, 5, 5, 330000, 330000),
+(28, 6, 5, 340000, 340000);
 
 --
 -- Indexes for dumped tables
