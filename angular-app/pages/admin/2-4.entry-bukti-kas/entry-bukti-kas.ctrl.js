@@ -97,7 +97,7 @@
 			}
 		}
 		function remove() {
-			console.log('remove')
+			dataservice.removeSPPD( vm.formValue.id ).then( closeModal ).then( activate );
 		}
 		function closeModal() {
 			if (modalInstance && modalInstance.dismiss) modalInstance.dismiss();

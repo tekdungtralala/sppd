@@ -116,6 +116,15 @@
 					titlePage: 'Entry Bukti Kas',
 					isSecure: true
 				})
+				.state('admin.entry-hasil-dinas', {
+					url: '/entry-hasil-dinas',
+					templateUrl: 'angular-app/pages/admin/2-5.entry-hasil-dinas/entry-hasil-dinas.html?version=' + window.version,
+					controller: 'entry-hasil-dinas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Transaksi',
+					titlePage: 'Entry Hasil Dinas',
+					isSecure: true
+				})
 				
 
 
