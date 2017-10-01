@@ -49,6 +49,7 @@
 
 	<script src="angular-app/pages/admin/2-1.entry-surat-tugas/entry-surat-tugas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/2-2.entry-surat-perjalanan-dinas/entry-surat-perjalanan-dinas.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/2-3.entry-biaya-dinas/entry-biaya-dinas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/pages/admin/3-1.laporan-pegawai-sppd/laporan-pegawai-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 

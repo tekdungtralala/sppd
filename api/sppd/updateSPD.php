@@ -8,7 +8,6 @@
 			. " column_e='" . $person['column_e'] . "', " 
 			. " column_f='" . $person['column_f'] . "' " 
 			. " where id="  . $person['id'];
-		echo $sql;
 		$conn->query($sql);
 	}
 ?>

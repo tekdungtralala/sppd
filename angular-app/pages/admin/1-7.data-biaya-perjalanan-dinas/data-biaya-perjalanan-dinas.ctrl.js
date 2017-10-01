@@ -47,10 +47,10 @@
 
 						if ( finded ) {
 							data.id = finded.id;
-							data.transportation_costs = finded.transportation_costs;
+							data.daily_cost = finded.daily_cost;
 							data.lodging_cost = finded.lodging_cost;
 
-							data.tcRp = helper.toRp( data.transportation_costs );
+							data.tcRp = helper.toRp( data.daily_cost );
 							data.lcRp = helper.toRp( data.lodging_cost );
 						}
 						
@@ -74,14 +74,14 @@
 				d.editMode = false;
 			});
 			data.editMode = true;
-			data.tCost = parseInt(data.transportation_costs);
+			data.tCost = parseInt(data.daily_cost);
 			data.lCost = parseInt(data.lodging_cost);
 		}
 		function cancelEdit( data ) {
 			data.editMode = false;
 		}
 		function saveCost( data ) {
-			data.transportation_costs = data.tCost;
+			data.daily_cost = data.tCost;
 			data.lodging_cost = data.lCost;
 
 			if ( data .id ) {

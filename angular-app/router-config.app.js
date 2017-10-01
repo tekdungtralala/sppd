@@ -98,6 +98,15 @@
 					titlePage: 'Entry Perjalanan Dinas',
 					isSecure: true
 				})
+				.state('admin.entry-biaya-dinas', {
+					url: '/entry-biaya-dinas',
+					templateUrl: 'angular-app/pages/admin/2-3.entry-biaya-dinas/entry-biaya-dinas.html?version=' + window.version,
+					controller: 'entry-biaya-dinas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Transaksi',
+					titlePage: 'Entry Biaya Dinas',
+					isSecure: true
+				})
 
 
 

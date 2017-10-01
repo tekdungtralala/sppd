@@ -6,7 +6,7 @@
 		$sql = "insert into travel_expenses values(NULL, " 
 			. " '" . $person['office_class_id'] . "', " 
 			. " '" . $person['province_id'] . "', " 
-			. " '" . $person['transportation_costs'] . "', " 
+			. " '" . $person['daily_cost'] . "', " 
 			. " '" . $person['lodging_cost'] . "' " 
 			. " )";
 		$conn->query($sql);
