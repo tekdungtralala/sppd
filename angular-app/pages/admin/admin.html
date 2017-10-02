@@ -101,8 +101,8 @@
 				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i>Pegawai SPPD</a>
 				<!-- tamplikan pegawai yang melakukan sppd (jumlah sppd), click pegawai show detail sppd  -->
 			</li>
-			<li>
-				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i>Tujuan SPPD</a>
+			<li ng-click="vm.toState('laporan-tujuan-sppd');" ng-class="{'active': $root.menuActive === '/laporan-tujuan-sppd' }">
+				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i>Tempat Tujuan SPPD</a>
 				<!-- tamplikan propinsi, click prov show kota, click kota show sppd detail-->
 			</li>
 			<li>

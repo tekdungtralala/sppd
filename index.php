@@ -58,6 +58,7 @@
 
 	<script src="angular-app/pages/admin/3-1.laporan-status-sppd/laporan-status-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-2.laporan-pegawai-sppd/laporan-pegawai-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/3-3.laporan-tujuan-sppd/laporan-tujuan-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-6.laporan-semua-sppd/laporan-semua-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript"> window.version = <?php echo(rand()); ?>; </script>

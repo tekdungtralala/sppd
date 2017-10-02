@@ -147,6 +147,15 @@
 					titlePage: 'Laporan Pegawai SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-tujuan-sppd', {
+					url: '/laporan-tujuan-sppd',
+					templateUrl: 'angular-app/pages/admin/3-3.laporan-tujuan-sppd/laporan-tujuan-sppd.html?version=' + window.version,
+					controller: 'laporan-tujuan-sppd.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Tempat Tujuan SPPD',
+					isSecure: true
+				})
 				.state('admin.laporan-semua-sppd', {
 					url: '/laporan-semua-sppd',
 					templateUrl: 'angular-app/pages/admin/3-6.laporan-semua-sppd/laporan-semua-sppd.html?version=' + window.version,
