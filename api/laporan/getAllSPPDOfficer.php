@@ -1,6 +1,6 @@
 <?php
 include '../connect.php';
-$sql = "select * from sppd where state !=6";
+$sql = "SELECT so.* FROM sppd_officer so, sppd s where so.sppd_id = s.id and s.state = '6'";
 $result = $conn->query($sql);
 $rows = array();
 if ($result->num_rows > 0) {

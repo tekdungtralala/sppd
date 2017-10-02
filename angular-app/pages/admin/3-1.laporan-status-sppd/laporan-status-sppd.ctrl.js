@@ -10,8 +10,8 @@
 		var vm = this;
 		vm.listData = [];
 
-		vm.labels = ['Input Surat Tugas', 'Input SPD', 'Input Biaya Dinas', 'Input Bukti Kas', 'Input Hasil Dinas', 'Selesai SPPD'];
-		vm.data = [0, 0, 0, 0, 0, 0];
+		vm.labels = ['Input Surat Tugas', 'Input SPD', 'Input Biaya Dinas', 'Input Bukti Kas', 'Input Hasil Dinas'];
+		vm.data = [0, 0, 0, 0, 0];
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {

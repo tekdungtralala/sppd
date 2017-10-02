@@ -65,7 +65,8 @@
 										class="glyphicon glyphicon-pencil"
 										style="margin-right: 10px;" 
 										ng-click="vm.openModal(data, 'data-modal.html', 'lg', 'input-biaya');"></span>
-									<span 
+									<span
+										ng-show="data.report_created_date && data.report_title && data.report_content" 
 										class="glyphicon glyphicon-print"
 										style="margin-right: 10px;" 
 										ng-click="vm.printLembar5( data );"></span>

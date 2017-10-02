@@ -47,7 +47,8 @@
 			closeTheReport: closeTheReport,
 
 			getAllSPPD: getAllSPPD,
-			getAllSPPDState6: getAllSPPDState6
+			getAllSPPDState6: getAllSPPDState6,
+			getAllSPPDOfficer: getAllSPPDOfficer
 		};
 		return service;
 
@@ -58,6 +59,9 @@
 			var qp = '';
 			if (startDate && endDate) qp = '?startDate=' + startDate + '&endDate=' + endDate;
 			return $http.get( 'api/laporan/getAllSPPDState6.php' + qp ).then( afterGet );
+		}
+		function getAllSPPDOfficer() {
+			return $http.get( 'api/laporan/getAllSPPDOfficer.php' ).then( afterGet );
 		}
 
 		function login(data) { return $http.post( 'api/login/login.php' , data); }
