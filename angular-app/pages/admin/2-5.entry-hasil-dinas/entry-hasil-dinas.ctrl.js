@@ -14,7 +14,7 @@
 		function activate() {
 			vm.search = '';
 
-			var promises = [ dataservice.getEntryKas() ];
+			var promises = [ dataservice.getEntryHasil() ];
 			$q.all( promises ).then( afterGetAll );
 			function afterGetAll( responses ) {
 				vm.listData = responses[0];

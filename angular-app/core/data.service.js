@@ -42,10 +42,17 @@
 			getEntryKas: getEntryKas,
 			updateSPPDOfficerKas: updateSPPDOfficerKas,
 			continueToInputHasil: continueToInputHasil,
+			getEntryHasil: getEntryHasil,
 			updateSPPDHasil: updateSPPDHasil,
-			closeTheReport: closeTheReport
+			closeTheReport: closeTheReport,
+
+			getAllSPPD: getAllSPPD,
 		};
 		return service;
+
+		function getAllSPPD() {
+			return $http.get( 'api/laporan/getAllSPPD.php' ).then( afterGet );
+		}
 
 		function login(data) { return $http.post( 'api/login/login.php' , data); }
 		function logout() { return $http.get( 'api/login/logout.php' ); }
@@ -107,6 +114,7 @@
 		function getEntryKas() { return $http.get( 'api/sppd/get.php?state=4' ).then( afterGet ); }
 		function updateSPPDOfficerKas( data ) { return $http.post( 'api/sppd/updateSPPDOfficerKas.php', data ); }
 		function continueToInputHasil( id ) { return $http.post( 'api/sppd/continueToState5.php?id=' + id ); }
+		function getEntryHasil() { return $http.get( 'api/sppd/get.php?state=5' ).then( afterGet ); }
 		function updateSPPDHasil( data ) { return $http.post( 'api/sppd/updateSPPDHasil.php', data ); }
 		function closeTheReport( id ) { return $http.post( 'api/sppd/continueToState6.php?id=' + id ); }
 

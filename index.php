@@ -22,10 +22,12 @@
 	<script src="bower_components/lodash/dist/lodash.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/moment/min/moment.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/terbilang-js/terbilang.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/chart.js/dist/Chart.min.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="bower_components/angular/angular.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js?version=<?php echo(rand()); ?>"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js?version=<?php echo(rand()); ?>"></script>
+	<script src="bower_components/angular-chart.js/dist/angular-chart.min.js?version=<?php echo(rand()); ?>"></script>
 
 	<script src="angular-app/init.app.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/main-config.app.js?version=<?php echo(rand()); ?>"></script>
@@ -54,7 +56,7 @@
 	<script src="angular-app/pages/admin/2-4.entry-bukti-kas/entry-bukti-kas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/2-5.entry-hasil-dinas/entry-hasil-dinas.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
-	<script src="angular-app/pages/admin/3-1.laporan-pegawai-sppd/laporan-pegawai-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/3-1.laporan-status-sppd/laporan-status-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript"> window.version = <?php echo(rand()); ?>; </script>
 </head>

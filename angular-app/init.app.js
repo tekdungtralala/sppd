@@ -9,6 +9,7 @@
 		// Third party module
 		'ui.router',
 		'ui.bootstrap',
+		'chart.js',
 		// 'datatables'
 	] )
 

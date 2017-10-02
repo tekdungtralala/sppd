@@ -129,13 +129,13 @@
 
 
 
-				.state('admin.laporan-pegawai-sppd', {
-					url: '/laporan-pegawai-sppd',
-					templateUrl: 'angular-app/pages/admin/3-1.laporan-pegawai-sppd/laporan-pegawai-sppd.html?version=' + window.version,
-					controller: 'laporan-pegawai-sppd.ctrl',
+				.state('admin.laporan-status-sppd', {
+					url: '/laporan-status-sppd',
+					templateUrl: 'angular-app/pages/admin/3-1.laporan-status-sppd/laporan-status-sppd.html?version=' + window.version,
+					controller: 'laporan-status-sppd.ctrl',
 					controllerAs: 'vm',
 					treeViewActive: 'Laporan',
-					titlePage: 'Laporan Pegawai SPPD',
+					titlePage: 'Laporan Status SPPD',
 					isSecure: true
 				})
 				
