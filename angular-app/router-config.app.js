@@ -138,6 +138,15 @@
 					titlePage: 'Laporan Status SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-semua-sppd', {
+					url: '/laporan-semua-sppd',
+					templateUrl: 'angular-app/pages/admin/3-6.laporan-semua-sppd/laporan-semua-sppd.html?version=' + window.version,
+					controller: 'laporan-semua-sppd.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Semua SPPD',
+					isSecure: true
+				})
 				
 			.state('login', {
 				url: '/',

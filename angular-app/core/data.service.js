@@ -47,11 +47,17 @@
 			closeTheReport: closeTheReport,
 
 			getAllSPPD: getAllSPPD,
+			getAllSPPDState6: getAllSPPDState6
 		};
 		return service;
 
-		function getAllSPPD() {
+		function getAllSPPD(startDate, endDate) {
 			return $http.get( 'api/laporan/getAllSPPD.php' ).then( afterGet );
+		}
+		function getAllSPPDState6(startDate, endDate) {
+			var qp = '';
+			if (startDate && endDate) qp = '?startDate=' + startDate + '&endDate=' + endDate;
+			return $http.get( 'api/laporan/getAllSPPDState6.php' + qp ).then( afterGet );
 		}
 
 		function login(data) { return $http.post( 'api/login/login.php' , data); }

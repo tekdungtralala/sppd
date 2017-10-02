@@ -113,7 +113,7 @@
 				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i>Beban Anggaran</a>
 				<!-- kriteria berdasarkan dipa/nondipa & column E ( and F), show sppd, click sppd show detail -->
 			</li>
-			<li>
+			<li ng-click="vm.toState('laporan-semua-sppd');" ng-class="{'active': $root.menuActive === '/laporan-semua-sppd' }">
 				<a href="javascript:void(0);"><i class="fa fa-circle-o"></i>Semua SPPD</a>
 				<!-- tamplikan semua, click sppd show detail -->
 			</li>

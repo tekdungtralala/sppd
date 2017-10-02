@@ -217,7 +217,7 @@
 			vm.formValue.listOfficers.push( officer );
 		}
 		function printLembar1( data ) {
-			window.open('print-lembar-1.php?sppdId=' + data.id, '_blank');
+			window.open('print-lembar-1.php?id=' + data.id, '_blank');
 		}
 		function processToSPD() {
 			dataservice.continueToInputSPD( vm.formValue.id ).then( closeModal ).then( activate );

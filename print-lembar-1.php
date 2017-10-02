@@ -1,6 +1,6 @@
 <?php
 include 'api/connect.php';
-$sql = "select * from sppd where id = " . $_GET['sppdId'];
+$sql = "select * from sppd where id = " . $_GET['id'];
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
