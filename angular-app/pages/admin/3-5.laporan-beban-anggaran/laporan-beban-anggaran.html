@@ -29,8 +29,27 @@
 							</select>
 						</div>
 
+						<div class="form-group">
+							<label>Kode Pusat Biaya</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" value="Dipa"
+										ng-model="vm.ccc" ng-change="vm.cccChanged();">
+										Dipa
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" value="Non Dipa"
+										ng-model="vm.ccc" ng-change="vm.cccChanged();">
+										Non Dipa
+								</label>
+							</div>
+							<button type="button" class="btn btn-block btn-default btn-sm" style="width: 120px;" ng-click="vm.ccc = null;vm.cccChanged();">Reset Kode Pusat</button>
+						</div>
+
 						<div class="box-footer">
-							<button type="button" class="btn btn-default pull-right" ng-click="vm.resetValue();">Reset</button>
+							<button type="button" class="btn btn-default pull-right" ng-click="vm.resetValue();">Reset Form</button>
 						</div>
 					</div>
 				</div>
@@ -109,7 +128,7 @@
 									</th>
 									<th>Petugas / NIP </th>
 									<th>Cetak</th>
-									<th>Tanggal Pelaksanaan</th>
+									<th>Kode Pusat</th>
 									<th>Output</th>
 									<th>Mata Anggaran</th>
 									<th>Cetak</th>
@@ -129,7 +148,7 @@
 										</p>
 									</td>
 									<td>
-										{{ data.start_date }} - {{ data.end_date }}
+										{{ data.ccc }}
 									</td>
 									<td>
 										{{ data.column_e }}

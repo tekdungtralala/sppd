@@ -32,6 +32,9 @@
 					dataservice.getSPPDOfficer( data.id ).then( afterGetSPPDOfficer );
 					function afterGetSPPDOfficer( officers ) {
 						data.officers = officers;
+						_.forEach( officers, function( o ) {
+							if (!data.ccc) data.ccc = o.kas_cost_center_code;
+						})
 						afterGetOfficer();
 					}
 				});
@@ -83,6 +86,7 @@
 		vm.columnEChanged = columnEChanged;
 		vm.columnFChanged = columnFChanged;
 		vm.resetValue = resetValue;
+		vm.cccChanged = cccChanged;
 		function columnEChanged() {
 			var cE = JSON.parse(vm.formValue.columnE);
 			vm.columnF = cE.childs;
@@ -95,16 +99,14 @@
 			});
 			vm.state = 1;
 
-			vm.listData = _.filter( listData, function( data ) {
-				return data.column_e == cE.name;
-			})
+			doFilter();
 		}
 		function columnFChanged() {
 			var cF = JSON.parse(vm.formValue.columnF);
 
 			vm.listData = _.filter( listData, function( data ) {
-				return data.column_f == cF.name;
-			})
+				return data.column_f == cF.name; 
+			});
 		}
 		function resetValue() {
 			vm.chartValue = [];
@@ -117,6 +119,26 @@
 			vm.formValue.columnF = null;
 			vm.state = 0;
 			vm.listData = listData;
+			vm.ccc = null;
+		}
+		function cccChanged() {
+			doFilter();
+		}
+
+		function doFilter() {
+			vm.listData = angular.copy( listData );
+
+			if ( vm.formValue.columnE ) {
+				var cE = JSON.parse( vm.formValue.columnE );
+				vm.listData = _.filter( vm.listData, function( data ) {
+					return data.column_e == cE.name;
+				});
+			}
+			if ( vm.ccc ) {
+				vm.listData = _.filter(vm.listData, function( data ) {
+					return vm.ccc == data.ccc;
+				});
+			}
 		}
 
 
