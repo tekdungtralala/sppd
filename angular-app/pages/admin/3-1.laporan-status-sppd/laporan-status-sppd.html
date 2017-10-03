@@ -1,17 +1,17 @@
 <div>
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 		<div class="box box-danger" style="height: 272px">
 			<div class="box-header with-border">
 				<h3 class="box-title">Grafik</h3>
 			</div>
 			<canvas id="doughnut" class="chart chart-doughnut"
-				height="80px" 
+				height="120px" 
 				chart-data="vm.data"
 				chart-labels="vm.labels">
 			</canvas>
 		</div>
 	</div>
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 		<div class="box box-danger">
 			<div class="box-header with-border">
 				<h3 class="box-title">Informasi</h3>
@@ -35,6 +35,16 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-4">
+		<div class="box box-danger" style="height: 272px">
+			<div class="box-header with-border">
+				<h3 class="box-title">Jumlah SPPD yang sudah selesai</h3>
+			</div>
+			<div style="height:227px; position:relative; display:flex; justify-content:center; align-items:center;font-size: 200px">
+				{{ vm.completed }}
 			</div>
 		</div>
 	</div>
