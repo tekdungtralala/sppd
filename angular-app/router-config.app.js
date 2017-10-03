@@ -156,6 +156,15 @@
 					titlePage: 'Laporan Tempat Tujuan SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-beban-anggaran', {
+					url: '/laporan-beban-anggaran',
+					templateUrl: 'angular-app/pages/admin/3-5.laporan-beban-anggaran/laporan-beban-anggaran.html?version=' + window.version,
+					controller: 'laporan-beban-anggaran.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Beban Anggaran',
+					isSecure: true
+				})
 				.state('admin.laporan-semua-sppd', {
 					url: '/laporan-semua-sppd',
 					templateUrl: 'angular-app/pages/admin/3-6.laporan-semua-sppd/laporan-semua-sppd.html?version=' + window.version,
