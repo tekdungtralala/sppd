@@ -13,6 +13,7 @@
 		var provinceLabel = [];
 		var provinceValue = [];
 		var listData;
+		vm.transportType = [];
 		vm.listData = [];
 		vm.provinces;
 		vm.cities;
@@ -25,7 +26,7 @@
 		function activate() {
 			vm.search = '';
 
-			var promises = [ dataservice.getAllSPPDState6(), dataservice.getProvinsi(), dataservice.getKota() ];
+			var promises = [ dataservice.getAllSPPDState6(), dataservice.getProvinsi(), dataservice.getKota(), dataservice.getAngkutan() ];
 
 			$q.all( promises ).then( afterGetAll );
 			function afterGetAll( responses ) {
@@ -69,13 +70,16 @@
 					p.total = total;
 				});
 
+				vm.transportType = responses[3];
 				resetValue();
 			}
 		}
 
+		var cityLabel;
 		vm.provinceChanged = provinceChanged;
 		vm.resetValue = resetValue;
 		vm.cityChanged = cityChanged;
+		vm.transportTypeChanged = transportTypeChanged;
 		function provinceChanged() {
 			vm.formValue.cityId = null;
 			vm.cities = _.filter(cities, function( k ) {
@@ -83,7 +87,7 @@
 			});
 			vm.state = 'CITY';
 
-			var cityLabel = _.map(vm.cities, 'name');
+			cityLabel = _.map(vm.cities, 'name');
 			var cityValue = [];
 			_.forEach(cityLabel, function(c) {
 				cityValue.push(0);
@@ -105,21 +109,48 @@
 			vm.chartValue = cityValue;
 			vm.chartLabel = cityLabel;
 
-			vm.listData = _.filter(listData, function(data) {
-				return _.findIndex(cityLabel, function(x) { return x === data.objective; }) >= 0;
-			})
+			doFilter();
 		}
 		function resetValue() {
 			vm.formValue = {};
 			vm.chartLabel = provinceLabel;
 			vm.chartValue = provinceValue;
 			vm.state = 'PROVINCE'
+			_.forEach(vm.transportType, function(t) {
+				t.checkboxValue = false;
+			});
 			vm.listData = angular.copy(listData);
 		}
 		function cityChanged() {
-			vm.listData = _.filter(listData, function(data) {
-				return data.objective == vm.formValue.cityName;
+			doFilter();
+		}
+		function transportTypeChanged() {
+			doFilter();
+		}
+
+		function doFilter() {
+			vm.listData = angular.copy(listData);
+
+			if (cityLabel && cityLabel.length > 0) {
+				vm.listData = _.filter(vm.listData, function(data) {
+					return _.findIndex(cityLabel, function(x) { return x === data.objective; }) >= 0;
+				});
+			}
+			if ( vm.formValue.cityName ) {
+				vm.listData = _.filter(vm.listData, function(data) {
+					return data.objective == vm.formValue.cityName;
+				});
+			}
+
+			var ttLabel = _.filter(vm.transportType, function(tt) {
+				return tt.checkboxValue === true;
 			});
+			ttLabel = _.map(ttLabel, 'name');
+			if ( ttLabel && ttLabel.length > 0 ) {
+				vm.listData = _.filter(vm.listData, function(data) {
+					return _.findIndex(ttLabel, function(x) { return x === data.transportation_type; }) >= 0;
+				});
+			}
 		}
 
 

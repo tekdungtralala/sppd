@@ -24,6 +24,15 @@
 					</select>
 				</div>
 
+				<div class="form-group">
+					<label style="margin-bottom: 0px;">Tipe Angkutan</label>
+					<div class="checkbox" ng-repeat="t in vm.transportType">
+						<label>
+							<input type="checkbox" ng-model="t.checkboxValue" ng-change="vm.transportTypeChanged();"> {{t.name}} </label>
+						</div>
+					</div>
+				</div>
+
 				<div class="box-footer">
 					<button type="button" class="btn btn-default pull-right" ng-click="vm.resetValue();">Reset</button>
 				</div>
@@ -105,7 +114,7 @@
 							<th>Cetak</th>
 							<th>Tanggal Pelaksanaan</th>
 							<th>Tujuan</th>
-							<th>Judul Laporan</th>
+							<th>Tipe Angkutan</th>
 							<th>Cetak</th>
 						</tr>
 						<tr ng-repeat="data in vm.listData | orderBy: vm.orderBy">
@@ -129,7 +138,7 @@
 								{{ data.objective }}
 							</td>
 							<td>
-								{{ data.report_title ? ( data.report_title | limitTo:30 ) + ( data.report_title.length > 30 ? '...' : '' ) : '' }}
+								{{ data.transportation_type }}
 							</td>
 							<td class="btn-actions">
 								( Surat Tugas &nbsp; <span class="glyphicon glyphicon-print" ng-click="vm.printLembar(1, data.id );"></span> )<br/>
