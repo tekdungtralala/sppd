@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 02, 2017 at 04:21 PM
+-- Generation Time: Oct 03, 2017 at 04:14 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.7
 
@@ -58,16 +58,16 @@ CREATE TABLE `budget` (
 --
 
 INSERT INTO `budget` (`id`, `name`, `sub_budget`) VALUES
-(23, '234234234', '1'),
-(27, '234234234', '234324'),
-(24, '234234234', '3'),
-(25, '234234234', '33'),
-(26, '234234234', 'ddd'),
-(28, '234234234', 'sdfdsf'),
 (3, '3470.004.011', '524111'),
 (4, '3470.004.011', '524112'),
 (7, '3470.004.022', '9843.001'),
-(8, '3470.004.022', '9843.002');
+(8, '3470.004.022', '9843.002'),
+(29, '3470.004.077', '123.456-001'),
+(30, '3470.004.077', '123.456-002'),
+(31, '3470.004.077', '123.456-003'),
+(32, '3470.004.077', '123.456-004'),
+(33, '3470.004.077', '123.456-005'),
+(34, '3470.004.077', '123.456-006');
 
 -- --------------------------------------------------------
 
@@ -229,7 +229,7 @@ CREATE TABLE `sppd` (
 --
 
 INSERT INTO `sppd` (`id`, `state`, `reference_number`, `start_date`, `end_date`, `total_day`, `base`, `objective`, `task`, `description`, `chief_name`, `transportation_type`, `column_e`, `column_f`, `report_title`, `report_content`, `report_created_date`) VALUES
-(28, 6, '1.a/BTPAL/ST/10/2017', '2017-10-01', '2017-10-04', 3, 'Dasar 1', 'Cirebon', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(28, 6, '1.a/BTPAL/ST/10/2017', '2017-10-01', '2017-10-04', 3, 'Dasar 1', 'Cirebon', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524111', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
 (29, 5, '29.a/BTPAL/ST/10/2017', '2017-10-10', '2017-10-17', 7, 'Nomor Surat 29', 'Brebes', 'Tigas 29', 'Keterangan 29', 'Ir. Setiyono, M.Si', 'Gojeg', '234234234', '1', NULL, NULL, NULL),
 (30, 5, '30.a/BTPAL/ST/10/2017', '2017-10-03', '2017-10-03', 0, 'Dasar Surat 30', 'Surabaya', 'Tugas 30', 'Keterangan Tugas 30', 'Ir. Setiyono, M.Si', 'Kereta Api', '234234234', '234324', NULL, NULL, NULL),
 (31, 4, '31.a/BTPAL/ST/10/2017', '2017-10-11', '2017-10-25', 14, 'Dasar 31', 'Malang', 'Tugas 31', 'Keterangan 31', 'Ir. Setiyono, M.Si', 'Balon Udara', '234234234', 'sdfdsf', NULL, NULL, NULL),
@@ -242,18 +242,18 @@ INSERT INTO `sppd` (`id`, `state`, `reference_number`, `start_date`, `end_date`,
 (38, 2, '38.a/BTPAL/ST/10/2017', '2017-10-18', '2017-10-20', 2, 'Individu 38', 'Semarang', 'Individu 38', 'Individu 38', 'Ir. Setiyono, M.Si', NULL, NULL, NULL, NULL, NULL, NULL),
 (39, 2, '39.a/BTPAL/ST/10/2017', '2017-10-18', '2017-10-19', 1, 'Individu', 'Sukabumi', 'Individu', 'Individu', 'Ir. Setiyono, M.Si', NULL, NULL, NULL, NULL, NULL, NULL),
 (40, 1, '40.a/BTPAL/ST/10/2017', '2017-10-04', '2017-10-06', 2, 'Rame Rame', 'Jakarta Barat', 'Rame Rame', 'Rame Rame', 'Ir. Setiyono, M.Si', NULL, NULL, NULL, NULL, NULL, NULL),
-(41, 6, '1.a/BTPAL/ST/10/2017', '2017-10-02', '2017-10-05', 3, 'Dasar 1', 'Malang', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(42, 6, '1.a/BTPAL/ST/10/2017', '2017-10-03', '2017-10-06', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(43, 6, '1.a/BTPAL/ST/10/2017', '2017-10-04', '2017-10-07', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(41, 6, '1.a/BTPAL/ST/10/2017', '2017-10-02', '2017-10-05', 3, 'Dasar 1', 'Malang', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524111', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(42, 6, '1.a/BTPAL/ST/10/2017', '2017-10-03', '2017-10-06', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524111', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(43, 6, '1.a/BTPAL/ST/10/2017', '2017-10-04', '2017-10-07', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524111', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
 (44, 6, '1.a/BTPAL/ST/10/2017', '2017-10-05', '2017-10-08', 3, 'Dasar 1', 'Surabaya', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(45, 6, '1.a/BTPAL/ST/10/2017', '2017-10-06', '2017-10-09', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(46, 6, '1.a/BTPAL/ST/10/2017', '2017-10-07', '2017-10-10', 3, 'Dasar 1', 'Tegal', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(47, 6, '1.a/BTPAL/ST/10/2017', '2017-10-08', '2017-10-11', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.011', '524112', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
-(48, 6, '48.a/BTPAL/ST/10/2017', '2017-10-29', '2017-11-04', 6, 'SPPD 84', 'Brebes', 'SPPD 84', 'SPPD 84', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.011', '524112', 'SPPD 84 SPPD 84', 'SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84', '2017-11-11'),
-(49, 6, '49.a/BTPAL/ST/10/2017', '2017-10-08', '2017-10-10', 2, 'sppd 49', 'Jakarta Utara', 'sppd 49', 'sppd 49', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '234234234', '234324', 'sppd 49 sppd 49 sppd 49', 'sppd 49 sppd 49 sppd 49', '2017-11-11'),
-(50, 6, '50.a/BTPAL/ST/10/2017', '2017-10-02', '2017-10-07', 5, 'sppd 50', 'Jakarta Tengah', 'sppd 50', 'sppd 50', 'Ir. Setiyono, M.Si', 'Kereta Api', '3470.004.011', '524111', 'sppd 50', 'sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50', '2017-11-11'),
-(51, 6, '51.a/BTPAL/ST/10/2017', '2017-10-15', '2017-10-21', 6, 'sppd 51 sppd 51 sppd 51', 'Tegal', 'sppd 51', 'sppd 51', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.022', '9843.002', 'sppd 51 sppd 51 sppd 51', 'sppd 51 sppd 51 sppd 51 sppd 51 sppd 51', '2017-11-11'),
-(52, 6, '52.a/BTPAL/ST/10/2017', '2017-11-05', '2017-11-11', 6, 'sppd 52', 'Surabaya', 'sppd 52', 'sppd 52', 'Ir. Setiyono, M.Si', 'Balon Udara', '3470.004.011', '524111', 'sppd 52 sppd 52', 'sppd 52 sppd 52 sppd 52 sppd 52', '2017-11-11');
+(45, 6, '1.a/BTPAL/ST/10/2017', '2017-10-06', '2017-10-09', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.022', '9843.001', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(46, 6, '1.a/BTPAL/ST/10/2017', '2017-10-07', '2017-10-10', 3, 'Dasar 1', 'Tegal', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.022', '9843.001', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(47, 6, '1.a/BTPAL/ST/10/2017', '2017-10-08', '2017-10-11', 3, 'Dasar 1', 'Bandung', 'Tugas 1', 'Keterangan 1', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.077', '123.456-001', 'Judul Laporan 1', 'Isi laporan', '2017-10-13'),
+(48, 6, '48.a/BTPAL/ST/10/2017', '2017-10-29', '2017-11-04', 6, 'SPPD 84', 'Brebes', 'SPPD 84', 'SPPD 84', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.077', '123.456-001', 'SPPD 84 SPPD 84', 'SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84', '2017-11-11'),
+(49, 6, '49.a/BTPAL/ST/10/2017', '2017-10-08', '2017-10-10', 2, 'sppd 49', 'Jakarta Utara', 'sppd 49', 'sppd 49', 'Ir. Setiyono, M.Si', 'Kendaraan Umum', '3470.004.077', '123.456-002', 'sppd 49 sppd 49 sppd 49', 'sppd 49 sppd 49 sppd 49', '2017-11-11'),
+(50, 6, '50.a/BTPAL/ST/10/2017', '2017-10-02', '2017-10-07', 5, 'sppd 50', 'Jakarta Tengah', 'sppd 50', 'sppd 50', 'Ir. Setiyono, M.Si', 'Kereta Api', '3470.004.077', '123.456-003', 'sppd 50', 'sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50 sppd 50', '2017-11-11'),
+(51, 6, '51.a/BTPAL/ST/10/2017', '2017-10-15', '2017-10-21', 6, 'sppd 51 sppd 51 sppd 51', 'Tegal', 'sppd 51', 'sppd 51', 'Ir. Setiyono, M.Si', 'Pesawat Terbang', '3470.004.077', '123.456-004', 'sppd 51 sppd 51 sppd 51', 'sppd 51 sppd 51 sppd 51 sppd 51 sppd 51', '2017-11-11'),
+(52, 6, '52.a/BTPAL/ST/10/2017', '2017-11-05', '2017-11-11', 6, 'sppd 52', 'Surabaya', 'sppd 52', 'sppd 52', 'Ir. Setiyono, M.Si', 'Balon Udara', '3470.004.077', '123.456-005', 'sppd 52 sppd 52', 'sppd 52 sppd 52 sppd 52 sppd 52', '2017-11-11');
 
 -- --------------------------------------------------------
 
@@ -296,9 +296,9 @@ INSERT INTO `sppd_officer` (`id`, `reference_number`, `committed_officer`, `comm
 (44, '44/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 29, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Ibu Bendahara', '222222222', '280000', '280000', '1960000', '1960000', '400000', '4320000', 'Empat Juta Tiga Ratus Dua Puluh Ribu Rupiah', '44/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', 'Uraian kas Tugas 29'),
 (45, '45/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 30, 'Drs. Djoko Prasetyo', '1952423432', '2B', 'Pejabat Pembuat Komitmen', 'Ibu Bendahara', '222222222', '320000', '320000', '0', '0', '200000', '200000', 'Dua Ratus Ribu Rupiah', '45/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', 'Uraian kas'),
 (46, '46/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 30, 'Staff 2', '44444444', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '0', '0', '200000', '200000', 'Dua Ratus Ribu Rupiah', '46/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', 'Uraian kas'),
-(47, '47/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 31, 'Staff 1', '333333333', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '4340000', '4340000', '400000', '9080000', 'Sembilan Juta Delapan Puluh Ribu Rupiah', '47/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
-(48, '48/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 31, 'Staff 2', '44444444', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '4340000', '4340000', '400000', '9080000', 'Sembilan Juta Delapan Puluh Ribu Rupiah', '48/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
-(49, '49/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 32, 'Staff 1', '333333333', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '310000', '310000', '300000', '920000', 'Sembilan Ratus Dua Puluh Ribu Rupiah', '49/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
+(47, '47/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 31, 'Staff 1', '333333333', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '4340000', '4340000', '400000', '9080000', 'Sembilan Juta Delapan Puluh Ribu Rupiah', '47/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', NULL),
+(48, '48/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 31, 'Staff 2', '44444444', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '4340000', '4340000', '400000', '9080000', 'Sembilan Juta Delapan Puluh Ribu Rupiah', '48/BKK/BTPAL/BPPT/X/2017', '2017', 'Non Dipa', NULL),
+(49, '49/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 32, 'Staff 1', '333333333', '2A', 'Staff', 'Ibu Bendahara', '222222222', '310000', '310000', '310000', '310000', '300000', '920000', 'Sembilan Ratus Dua Puluh Ribu Rupiah', '49/BKK/BTPAL/BPPT/X/2017', '2017', 'Dipa', NULL),
 (50, '50/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 33, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Ibu Bendahara', '222222222', '340000', '340000', '680000', '680000', '300000', '1660000', 'Satu Juta Enam Ratus Enam Puluh Ribu Rupiah', '50/BKK/BTPAL/BPPT/X/2017', '2017', 'Non Dipa', 'SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84 SPPD 84'),
 (51, '51/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 34, 'Ir. Setiyono, M.Si', '081123456', '2D', 'Kepala Balai Teknologi', 'Ibu Bendahara', '222222222', '160000', '160000', '1120000', '1120000', '123111', '2363111', 'Dua Juta Tiga Ratus Enam Puluh Tiga Ribu Seratus Sebelas Rupiah', '51/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
 (52, '52/SPD/BTPAL/X/2017', 'Drs. Djoko Prasetyo', '1952423432', 34, 'Drs. Djoko Prasetyo', '1952423432', '2B', 'Pejabat Pembuat Komitmen', 'Ibu Bendahara', '222222222', '140000', '140000', '980000', '980000', '123111', '2083111', 'Dua Juta Delapan Puluh Tiga Ribu Seratus Sebelas Rupiah', '52/BKK/BTPAL/BPPT/X/2017', '2017', NULL, NULL),
@@ -500,7 +500,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `budget`
 --
 ALTER TABLE `budget`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `city`
 --
