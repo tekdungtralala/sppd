@@ -52,7 +52,7 @@
 		};
 		return service;
 
-		function getAllSPPD(startDate, endDate) {
+		function getAllSPPD() {
 			return $http.get( 'api/laporan/getAllSPPD.php' ).then( afterGet );
 		}
 		function getAllSPPDState6(startDate, endDate) {

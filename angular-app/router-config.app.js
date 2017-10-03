@@ -156,6 +156,15 @@
 					titlePage: 'Laporan Tempat Tujuan SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-biaya-sppd', {
+					url: '/laporan-biaya-sppd',
+					templateUrl: 'angular-app/pages/admin/3-4.laporan-biaya-sppd/laporan-biaya-sppd.html?version=' + window.version,
+					controller: 'laporan-biaya-sppd.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Biaya SPPD',
+					isSecure: true
+				})
 				.state('admin.laporan-beban-anggaran', {
 					url: '/laporan-beban-anggaran',
 					templateUrl: 'angular-app/pages/admin/3-5.laporan-beban-anggaran/laporan-beban-anggaran.html?version=' + window.version,
