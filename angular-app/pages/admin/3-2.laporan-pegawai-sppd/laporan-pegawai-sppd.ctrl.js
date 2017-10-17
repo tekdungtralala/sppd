@@ -8,6 +8,7 @@
 	function Controller($q, $scope, $rootScope, $state, $uibModal, abstractPage, helper, dataservice) {
 		$rootScope.isGrey = false;
 		var vm = this;
+		vm.listSppd = [];
 		vm.listData = [];
 		vm.data = [];
 		vm.labels = [];
@@ -19,6 +20,18 @@
 
 			$q.all( promises ).then( afterGetAll );
 			function afterGetAll( responses ) {
+				vm.listSppd = angular.copy(responses[0]);
+				_.forEach(responses[1], function( o ) {
+					var s = _.find(vm.listSppd, function( s ) {
+						return o.sppd_id === s.id;
+					});
+					if (s.officers) {
+						s.officers.push(o);
+					} else {
+						s.officers = [o];
+					}
+				});
+
 				var sppd = responses[0];
 				var officer = responses[1];
 
@@ -34,6 +47,7 @@
 						});
 					}
 				});
+				console.log(vm.listSppd)
 
 				_.forEach(vm.listData, function( o ) {
 					var list = o.list;

@@ -58,6 +58,42 @@
 			</div>
 		</div>
 	</div>
+	<div class="row" style="background: white;margin: 1px;">
+		<div class="box-body table-responsive no-padding">
+			<table class="table table-hover">
+				<tbody>
+					<tr>
+						<th>No</th>
+						<th>NIP / NAMA</th>
+						<th>Jabatan</th>
+						<th>Tanggal</th>
+						<th>Tujuan</th>
+					</tr>
+					<tr ng-repeat="data in vm.listSppd">
+						<td>
+							{{ $index + 1 }}
+						</td>
+						<td>
+							<div ng-repeat="o in data.officers">
+								{{ o.officer_id }} - {{ o.name }}
+							</div>
+						</td>
+						<td>
+							<div ng-repeat="o in data.officers">
+								{{ o.office_position_name }}
+							</div>
+						</td>
+						<td>
+							{{ data.start_date}} - {{ data.end_date }}
+						</td>
+						<td>
+							{{ data.objective }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 	<script type="text/ng-template" id="data-modal.html">
 		<div class="modal-header">
