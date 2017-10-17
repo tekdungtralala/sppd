@@ -6,7 +6,7 @@
 		$sql = "insert into officer values(NULL, " 
 			. " '" . $person['name'] . "', " 
 			. " '" . $person['officer_id'] . "', " 
-			. " '" . $person['email'] . "', " 
+			. " '" . $person['phone_number'] . "', " 
 			. " '" . $person['office_class_id'] . "', " 
 			. " '" . $person['office_position_id'] . "' " 
 			. " )";

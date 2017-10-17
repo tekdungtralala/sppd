@@ -62,7 +62,7 @@
 					});
 					o.officeClass = c;
 
-					if ( p.name === 'Kepala Balai Teknologi' ) {
+					if ( p.name === 'Kepala Balai Teknologi Pengolahan Air dan Limbah' ) {
 						chiefName = o.name;
 					}
 
@@ -139,10 +139,10 @@
 					reference_number: currentSPPDNumber + '.a/BTPAL/ST/10/2017',
 					chief_name: chiefName,
 					committed_officer: committedOfficer,
-					committed_officer_id: committedOfficerId
-					// base: 'base....',
+					committed_officer_id: committedOfficerId,
+					base: 'Peraturan Kepala Badan Pengkajian dan Penerapan Teknologi, Nomor 018 tahun 2015. Tentang Organisasi dan Tata Kerja Balai Teknologi Pengolahan Air dan Limbah.',
 					// task: 'task ....',
-					// description: 'description....'
+					description: 'Setelah menjalankan tugas yang bersangkutan melaporkan hasilnya kepada Kepala Balai Teknologi Pengolahan Air dan Limbah dalam kurun waktu 1 minggu.'
 				};
 			}
 

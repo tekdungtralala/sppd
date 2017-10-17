@@ -1,7 +1,9 @@
 <?php
 include '../connect.php';
 
-if ($_GET['startDate'] && $_GET['endDate'])
+$startDate = !empty($_GET['startDate']) ? $_GET['startDate'] : '';
+$endDate = !empty($_GET['endDate']) ? $_GET['endDate'] : '';
+if ($startDate && $endDate)
 	$sql = "select * from sppd where state = 6 and ((start_date BETWEEN '".$_GET['startDate']."' AND '".$_GET['endDate']."') or (end_date BETWEEN '".$_GET['startDate']."' AND '".$_GET['endDate']."'))";
 else
 	$sql = "select * from sppd where state = 6";

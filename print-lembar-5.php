@@ -16,6 +16,7 @@ $sql1 = "select * from sppd_officer where sppd_id = " . $_GET['id'];
 $result1 = $conn->query($sql1);
 while($row1 = $result1->fetch_assoc()) {
 	echo $row1['name'] . "<br/>";
+	return;
 }
 
 ?>

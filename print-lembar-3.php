@@ -11,7 +11,7 @@ $row1 = $result1->fetch_assoc();
 
 echo "surat perjalanan : ". $row['reference_number']. "<br/>";
 echo "tanggal : ". $row1['start_date']. "<br/>";
-echo "nama : ". $row['nama']. "<br/>";
+echo "nama : ". $row['name']. "<br/>";
 echo "nip : ". $row['officer_id']. "<br/>";
 echo "golongan : ". $row['office_class_name']. "<br/>";
 echo "todal hari : ". $row1['total_day']. "<br/>";

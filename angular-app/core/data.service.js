@@ -75,13 +75,13 @@
 
 		function getGolongan() { return getAPI('golongan'); }
 		function createGolongan( data ) { return postAPI('golongan', data); }
-		function editGolongan( data ) { return putAPI('pegawai', data); }
-		function removeGolongan( id ) { return deleteAPI('jabatan', id); }
+		function editGolongan( data ) { return putAPI('golongan', data); }
+		function removeGolongan( id ) { return deleteAPI('golongan', id); }
 
 		function getPegawai() { return getAPI('pegawai'); }
 		function createPegawai( data ) { return postAPI('pegawai', data); }
 		function editPegawai( data ) { return putAPI('pegawai', data); }
-		function removePegawai( id ) { return deleteAPI('jabatan', id); }
+		function removePegawai( id ) { return deleteAPI('pegawai', id); }
 
 		function getProvinsi() { return getAPI('provinsi'); }
 		function createProvinsi( data ) { return postAPI('provinsi', data); }
