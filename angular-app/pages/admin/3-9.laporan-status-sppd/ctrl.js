@@ -3,7 +3,7 @@
 
 	angular
 		.module('app')
-		.controller('laporan-status-sppd.ctrl', Controller);
+		.controller('laporan-status-sppd-2.ctrl', Controller);
 
 	function Controller($q, $scope, $rootScope, $state, $uibModal, abstractPage, helper, dataservice) {
 		$rootScope.isGrey = false;

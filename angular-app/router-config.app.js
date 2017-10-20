@@ -204,7 +204,7 @@
 				.state('admin.laporan-status-sppd-2', {
 					url: '/laporan-status-sppd-2',
 					templateUrl: 'angular-app/pages/admin/3-9.laporan-status-sppd/template.html?version=' + window.version,
-					controller: 'laporan-status-sppd.ctrl',
+					controller: 'laporan-status-sppd-2.ctrl',
 					controllerAs: 'vm',
 					treeViewActive: 'Laporan',
 					titlePage: 'Laporan Status SPPD',
