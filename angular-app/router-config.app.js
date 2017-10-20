@@ -228,6 +228,15 @@
 					titlePage: 'Laporan Total Biaya Dinas',
 					isSecure: true
 				})
+				.state('admin.laporan-status-anggaran', {
+					url: '/laporan-status-anggaran',
+					templateUrl: 'angular-app/pages/admin/3-12.laporan-status-anggaran/template.html?version=' + window.version,
+					controller: 'laporan-status-anggaran.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Status Anggaran',
+					isSecure: true
+				})
 				
 				
 				

@@ -67,6 +67,7 @@
 	<script src="angular-app/pages/admin/3-9.laporan-status-sppd/ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-10.laporan-hasil-sppd/ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-11.laporan-total-biaya-dinas/ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/3-12.laporan-status-anggaran/ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript"> window.version = <?php echo(rand()); ?>; </script>
 </head>
