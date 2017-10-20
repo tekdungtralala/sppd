@@ -45,13 +45,17 @@
 			getEntryHasil: getEntryHasil,
 			updateSPPDHasil: updateSPPDHasil,
 			closeTheReport: closeTheReport,
-
+			
+			getAllStateSPPD: getAllStateSPPD,
 			getAllSPPD: getAllSPPD,
 			getAllSPPDState6: getAllSPPDState6,
 			getAllSPPDOfficer: getAllSPPDOfficer
 		};
 		return service;
 
+		function getAllStateSPPD() {
+			return $http.get( 'api/laporan/getAllStateSPPD.php' ).then( afterGet );
+		}
 		function getAllSPPD() {
 			return $http.get( 'api/laporan/getAllSPPD.php' ).then( afterGet );
 		}
