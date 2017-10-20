@@ -219,6 +219,16 @@
 					titlePage: 'Laporan Hasil SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-total-biaya-dinas', {
+					url: '/laporan-total-biaya-dinas',
+					templateUrl: 'angular-app/pages/admin/3-11.laporan-total-biaya-dinas/template.html?version=' + window.version,
+					controller: 'laporan-total-biaya-dinas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Total Biaya Dinas',
+					isSecure: true
+				})
+				
 				
 				
 			.state('login', {
