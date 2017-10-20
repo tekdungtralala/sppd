@@ -62,6 +62,7 @@
 	<script src="angular-app/pages/admin/3-4.laporan-biaya-sppd/laporan-biaya-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-5.laporan-beban-anggaran/laporan-beban-anggaran.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/3-6.laporan-semua-sppd/laporan-semua-sppd.ctrl.js?version=<?php echo(rand()); ?>"></script>
+	<script src="angular-app/pages/admin/3-7.laporan-surat-tugas/ctrl.js?version=<?php echo(rand()); ?>"></script>
 
 	<script type="text/javascript"> window.version = <?php echo(rand()); ?>; </script>
 </head>

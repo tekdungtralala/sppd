@@ -183,6 +183,15 @@
 					titlePage: 'Laporan Semua SPPD',
 					isSecure: true
 				})
+				.state('admin.laporan-surat-tugas', {
+					url: '/laporan-surat-tugas',
+					templateUrl: 'angular-app/pages/admin/3-7.laporan-surat-tugas/template.html?version=' + window.version,
+					controller: 'laporan-surat-tugas.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Surat Tugas',
+					isSecure: true
+				})
 				
 			.state('login', {
 				url: '/',
