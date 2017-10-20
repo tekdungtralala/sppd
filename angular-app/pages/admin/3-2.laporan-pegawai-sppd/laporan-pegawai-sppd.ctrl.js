@@ -47,7 +47,6 @@
 						});
 					}
 				});
-				console.log(vm.listSppd)
 
 				_.forEach(vm.listData, function( o ) {
 					var list = o.list;

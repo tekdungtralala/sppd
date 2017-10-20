@@ -33,7 +33,6 @@
 					if ( data.state === '5') data.status = 'Entry Hasil Dinas';
 					if ( data.state === '6') data.status = 'Selesai';
 				});
-				console.log(vm.listData);
 			}
 		}
 
