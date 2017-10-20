@@ -195,7 +195,7 @@
 				.state('admin.laporan-tujuan-sppd-2', {
 					url: '/laporan-tujuan-sppd-2',
 					templateUrl: 'angular-app/pages/admin/3-8.laporan-tujuan-sppd/template.html?version=' + window.version,
-					controller: 'laporan-tujuan-sppd.ctrl',
+					controller: 'laporan-tujuan-sppd-2.ctrl',
 					controllerAs: 'vm',
 					treeViewActive: 'Laporan',
 					titlePage: 'Laporan Tujuan SPPD',
