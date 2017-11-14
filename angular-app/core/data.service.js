@@ -59,8 +59,10 @@
 			return $http.post( 'api/print/postReportData.php', data );
 		}
 
-		function getAllStateSPPD() {
-			return $http.get( 'api/laporan/getAllStateSPPD.php' ).then( afterGet );
+		function getAllStateSPPD(startDate, endDate) {
+			var qp = '';
+			if (startDate && endDate) qp = '?startDate=' + startDate + '&endDate=' + endDate;
+			return $http.get( 'api/laporan/getAllStateSPPD.php' + qp ).then( afterGet );
 		}
 		function getAllSPPD() {
 			return $http.get( 'api/laporan/getAllSPPD.php' ).then( afterGet );
