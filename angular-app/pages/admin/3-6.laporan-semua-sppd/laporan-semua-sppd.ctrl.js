@@ -29,6 +29,14 @@
 			}
 		}
 
+		vm.printReport = printReport;
+		function printReport() {
+			dataservice.printReportAllSppd( vm.listData ).then( afterPrintReport );
+			function afterPrintReport() {
+				window.open('api/print/1-all-sppd-doprint.php');
+			}
+		}
+
 		vm.printLembar = printLembar;
 		function printLembar(no, id) {
 			window.open('print-lembar-' + no + '.php?id=' + id, '_blank');

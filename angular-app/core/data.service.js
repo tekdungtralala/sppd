@@ -49,9 +49,15 @@
 			getAllStateSPPD: getAllStateSPPD,
 			getAllSPPD: getAllSPPD,
 			getAllSPPDState6: getAllSPPDState6,
-			getAllSPPDOfficer: getAllSPPDOfficer
+			getAllSPPDOfficer: getAllSPPDOfficer,
+
+			printReportAllSppd: printReportAllSppd
 		};
 		return service;
+
+		function printReportAllSppd(data) {
+			return $http.post( 'api/print/1-all-sppd.php', data );
+		}
 
 		function getAllStateSPPD() {
 			return $http.get( 'api/laporan/getAllStateSPPD.php' ).then( afterGet );

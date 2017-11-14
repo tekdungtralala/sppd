@@ -63,6 +63,9 @@
 						<div class="box-footer">
 							<button type="button" class="btn btn-primary pull-right" ng-click="vm.submitSearch()">Search</button>
 							<button type="button" class="btn btn-default pull-right" ng-click="vm.resetSearch()" style="margin-right: 20px;">Reset</button>
+							<button type="button" class="btn btn-success pull-right" ng-click="vm.printReport()"
+								ng-disabled="vm.listData.length === 0"
+								style="margin-right: 20px;">Print</button>
 						</div>
 					</form>
 
