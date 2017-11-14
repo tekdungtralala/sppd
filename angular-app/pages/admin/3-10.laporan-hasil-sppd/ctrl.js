@@ -29,6 +29,14 @@
 			}
 		}
 
+		vm.printReport = printReport;
+		function printReport() {
+			dataservice.postReportData( vm.listData ).then( afterPrintReport );
+			function afterPrintReport() {
+				window.open('api/print/4-hasil-sppd.php');
+			}
+		}
+
 		vm.printLembar = printLembar;
 		function printLembar(no, id) {
 			window.open('print-lembar-' + no + '.php?id=' + id, '_blank');
