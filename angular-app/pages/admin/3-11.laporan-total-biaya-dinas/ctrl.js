@@ -29,6 +29,7 @@
 						var total_cost = 0;
 						_.forEach( officers, function( o ) {
 							total_cost = total_cost + parseInt(o.total_cost);
+							o.total_cost_default = o.total_cost;
 							o.total_cost = helper.toRp(o.total_cost);
 						});
 						data.officers = officers;
@@ -37,6 +38,14 @@
 						vm.total_cost = helper.toRp(total);
 					}
 				});
+			}
+		}
+
+		vm.printReport = printReport;
+		function printReport() {
+			dataservice.postReportData( vm.listData ).then( afterPrintReport );
+			function afterPrintReport() {
+				window.open('api/print/6-biaya-dinas.php');
 			}
 		}
 
