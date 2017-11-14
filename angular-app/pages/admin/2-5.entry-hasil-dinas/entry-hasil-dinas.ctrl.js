@@ -19,6 +19,7 @@
 			function afterGetAll( responses ) {
 				vm.listData = responses[0];
 				_.forEach( vm.listData, function( data ) {
+					data.report_title = data.task;
 					dataservice.getSPPDOfficer( data.id ).then( afterGetSPPDOfficer );
 					function afterGetSPPDOfficer( officers ) {
 						data.officers = officers;
