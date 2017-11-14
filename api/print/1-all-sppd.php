@@ -1,8 +1,20 @@
 <?php
 	include '../connect.php';
-	$json = file_get_contents('php://input');
-	$data = (array) json_decode($json);
 	session_start();
-	$_SESSION["data"] = $data;
-	echo $data[0]->base;
+	$data = $_SESSION["data"];
+
+	foreach ( $data as $d ) {
+		echo "Tanggal Pelaksanaan = " . $d->start_date . " - " . $d->end_date;
+		echo "<br/>";
+		echo "Tujuan = " . $d->objective;
+		echo "<br/>";
+		echo "Judul Laporan = " . $d->report_title;
+		echo "<br/>";
+		foreach ( $d->officers as $o ) {
+			echo $o->name . "  -  " . $o->officer_id ."<br/>";
+		}
+
+		echo "<br/>";
+	}
 ?>
+

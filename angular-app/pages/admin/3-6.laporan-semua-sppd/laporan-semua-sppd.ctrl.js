@@ -31,9 +31,9 @@
 
 		vm.printReport = printReport;
 		function printReport() {
-			dataservice.printReportAllSppd( vm.listData ).then( afterPrintReport );
+			dataservice.postReportData( vm.listData ).then( afterPrintReport );
 			function afterPrintReport() {
-				window.open('api/print/1-all-sppd-doprint.php');
+				window.open('api/print/1-all-sppd.php');
 			}
 		}
 

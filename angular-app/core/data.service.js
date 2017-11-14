@@ -51,12 +51,12 @@
 			getAllSPPDState6: getAllSPPDState6,
 			getAllSPPDOfficer: getAllSPPDOfficer,
 
-			printReportAllSppd: printReportAllSppd
+			postReportData: postReportData
 		};
 		return service;
 
-		function printReportAllSppd(data) {
-			return $http.post( 'api/print/1-all-sppd.php', data );
+		function postReportData(data) {
+			return $http.post( 'api/print/postReportData.php', data );
 		}
 
 		function getAllStateSPPD() {
