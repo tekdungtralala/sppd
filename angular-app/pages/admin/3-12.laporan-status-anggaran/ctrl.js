@@ -36,6 +36,14 @@
 			}
 		}
 
+		vm.printReport = printReport;
+		function printReport() {
+			dataservice.postReportData( vm.listData ).then( afterPrintReport );
+			function afterPrintReport() {
+				window.open('api/print/5-status-anggaran.php');
+			}
+		}
+
 		vm.printLembar = printLembar;
 		function printLembar(no, id) {
 			window.open('print-lembar-' + no + '.php?id=' + id, '_blank');
