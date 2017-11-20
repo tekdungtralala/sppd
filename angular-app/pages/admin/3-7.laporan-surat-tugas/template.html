@@ -72,15 +72,18 @@
 						<tbody>
 							<tr>
 								<th>No</th>
+								<th>Status</th>
 								<th>No. Surat Tugas</th>
 								<th>No. SPD / Nip / Name</th>
-								<th>Tanggal</th>
-								<th>Judul</th>
-								<th>Tujuan</th>
-								<th>Tugas</th>
+								<th>Lama Jalan</th>
+								<th>Kota</th>
+								<th>Angkutan</th>
 							</tr>
 							<tr ng-repeat="data in vm.listData">
 								<td>{{ $index + 1 }}</td>
+								<td>
+									{{ data.status }}
+								</td>
 								<td>
 									<span class="glyphicon glyphicon-print" ng-click="vm.printLembar(1, data.id );" style="cursor: pointer;"></span>
 									&nbsp;
@@ -94,16 +97,13 @@
 									</p>
 								</td>
 								<td>
-									{{ data.start_date }} - {{ data.end_date }}
-								</td>
-								<td>
-									{{ data.report_title }}
+									{{ data.total_day }}
 								</td>
 								<td>
 									{{ data.objective }}
 								</td>
 								<td>
-									{{ data.task }}
+									{{ data.transportation_type }}
 								</td>
 								<!-- 
 								<td class="btn-actions">

@@ -25,6 +25,13 @@
 					function afterGetSPPDOfficer( officers ) {
 						data.officers = officers;
 					}
+					if ( data.state === '0') data.status = 'Hapus/Batal';
+					if ( data.state === '1') data.status = 'Entry Surat Tugas';
+					if ( data.state === '2') data.status = 'Entry SPD';
+					if ( data.state === '3') data.status = 'Entry Biaya Dinas';
+					if ( data.state === '4') data.status = 'Entry Bukti Kas';
+					if ( data.state === '5') data.status = 'Entry Hasil Dinas';
+					if ( data.state === '6') data.status = 'Selesai';
 				});
 			}
 		}

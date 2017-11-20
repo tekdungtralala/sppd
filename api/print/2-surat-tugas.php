@@ -4,15 +4,15 @@
 	$data = $_SESSION["data"];
 
 	foreach ( $data as $d ) {
+		echo "Status = " . $d->status;
+		echo "<br/>";
 		echo "Nomor Surat Tugas = " . $d->reference_number;
 		echo "<br/>";
-		echo "Tanggal Pelaksanaan = " . $d->start_date . " - " . $d->end_date;
+		echo "Lama Jalan = " . $d->total_day;
 		echo "<br/>";
-		echo "Task = " . $d->task;
+		echo "Kota = " . $d->objective;
 		echo "<br/>";
-		echo "Judul Laporan = " . $d->report_title;
-		echo "<br/>";
-		echo "Tujuan = " . $d->objective;
+		echo "Angkutan = ". $d->transportation_type;
 		echo "<br/>";
 		foreach ( $d->officers as $o ) {
 			echo $o->reference_number . "  -  " . $o->name . "  -  " . $o->officer_id ."<br/>";
