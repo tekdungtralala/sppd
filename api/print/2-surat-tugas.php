@@ -12,6 +12,8 @@
 		echo "<br/>";
 		echo "Judul Laporan = " . $d->report_title;
 		echo "<br/>";
+		echo "Tujuan = " . $d->objective;
+		echo "<br/>";
 		foreach ( $d->officers as $o ) {
 			echo $o->reference_number . "  -  " . $o->name . "  -  " . $o->officer_id ."<br/>";
 		}
