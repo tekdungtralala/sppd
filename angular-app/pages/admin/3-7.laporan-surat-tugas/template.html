@@ -58,6 +58,7 @@
 							<button type="button" class="btn btn-default pull-right" ng-click="vm.resetSearch()" style="margin-right: 20px;">Reset</button>
 							<button type="button" class="btn btn-success pull-right" ng-click="vm.printReport()"
 								ng-disabled="vm.listData.length === 0"
+								ng-show="vm.searchClicked"
 								style="margin-right: 20px;">Print</button>
 						</div>
 					</form>
