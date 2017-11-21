@@ -42,7 +42,9 @@
 
 		vm.printReport = printReport;
 		function printReport() {
-			dataservice.postReportData( vm.listData ).then( afterPrintReport );
+			var sd, ed;
+			if ( vm.startDate && vm.endDate ) { sd = moment(vm.startDate).format('YYYY-MM-DD'); ed = moment(vm.endDate).format('YYYY-MM-DD'); }
+			dataservice.postReportData( vm.listData, sd, ed ).then( afterPrintReport );
 			function afterPrintReport() {
 				window.open('api/print/7-tujuan-sppd.php');
 			}

@@ -55,8 +55,11 @@
 		};
 		return service;
 
-		function postReportData(data) {
-			return $http.post( 'api/print/postReportData.php', data );
+		function postReportData(data, startDate, endDate) {
+			var qp = '';
+			if (startDate && endDate)
+				qp = qp + 'startDate=' + startDate + '&endDate=' + endDate;
+			return $http.post( 'api/print/postReportData.php?' + qp, data );
 		}
 
 		function getAllStateSPPD(startDate, endDate) {

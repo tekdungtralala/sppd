@@ -1,6 +1,8 @@
 <?php
 	include '../connect.php';
 	session_start();
+	echo "Start Date = ". $_SESSION["startDate"] ."<br/>";
+	echo "End   Date = ". $_SESSION["endDate"] ."<br/>";
 	$data = $_SESSION["data"];
 
 	foreach ( $data as $d ) {
@@ -13,7 +15,6 @@
 		foreach ( $d->officers as $o ) {
 			echo $o->name . "  -  " . $o->officer_id ."<br/>";
 		}
-
 		echo "<br/>";
 	}
 ?>
