@@ -237,6 +237,15 @@
 					titlePage: 'Laporan Status Anggaran',
 					isSecure: true
 				})
+				.state('admin.laporan-total-keuangan', {
+					url: '/laporan-total-keuangan',
+					templateUrl: 'angular-app/pages/admin/3-13.laporan-total-keuangan/template.html?version=' + window.version,
+					controller: 'laporan-total-keuangan.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Laporan',
+					titlePage: 'Laporan Total Keuangan',
+					isSecure: true
+				})
 				
 				
 				

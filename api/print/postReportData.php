@@ -9,4 +9,5 @@
 	$_SESSION["data"] = $data;
 	$_SESSION["startDate"] = $startDate;
 	$_SESSION["endDate"] = $endDate;
+	$_SESSION["totalRp"] = $_GET['totalRp'];
 ?>

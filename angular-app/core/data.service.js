@@ -55,10 +55,12 @@
 		};
 		return service;
 
-		function postReportData(data, startDate, endDate) {
+		function postReportData(data, startDate, endDate, totalRp) {
 			var qp = '';
 			if (startDate && endDate)
 				qp = qp + 'startDate=' + startDate + '&endDate=' + endDate;
+			if (totalRp)
+				qp = qp + '&totalRp=' + totalRp;
 			return $http.post( 'api/print/postReportData.php?' + qp, data );
 		}
 
