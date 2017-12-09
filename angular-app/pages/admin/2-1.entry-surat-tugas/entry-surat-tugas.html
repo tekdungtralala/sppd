@@ -6,7 +6,7 @@
 				<div class="box-header">
 					<h3 class="box-title">
 						<button type="button" class="btn btn-block btn-success btn-flat"
-							ng-click="vm.openModal(null, 'data-modal.html');">
+							ng-click="vm.openModal(null, 'data-modal.html', false);">
 							<span class="glyphicon glyphicon-plus"></span>
 							&nbsp;
 							Create
@@ -81,6 +81,11 @@
 										ng-click="vm.openModal(data, 'confirm-modal.html');"
 										></span>
 									<span 
+										class="glyphicon glyphicon-pencil"
+										style="margin-right: 10px;" 
+										ng-click="vm.openModal(data, 'data-modal.html', false);"
+										></span>
+									<span 
 										class="glyphicon glyphicon-print"
 										style="margin-right: 10px;"
 										ng-click="vm.printLembar1( data )"
@@ -88,7 +93,7 @@
 									<span 
 										class="glyphicon glyphicon-eye-open"
 										style="margin-right: 10px;" 
-										ng-click="vm.openModal(data, 'data-modal.html');"
+										ng-click="vm.openModal(data, 'data-modal.html', true);"
 										></span>
 									<span 
 										class="glyphicon glyphicon-log-in"
@@ -132,18 +137,18 @@
 
 					<div class="form-group" id="officers" ng-class="{'has-error': vm.hasError['officers']}">
 						<label>Memberi Tugas Kepada</label>
-						<div class="input-group" style="margin-bottom: 5px;" ng-hide="vm.formValue.id">
+						<div class="input-group" style="margin-bottom: 5px;" ng-hide="vm.formValue.disabled">
 							<select class="form-control" ng-model="vm.formValue.officeIdTemp" >
 								<option ng-repeat="option in vm.formValue.listOfficers" value="{{option.id}}">{{option.name}}</option>
 							</select>
-							<span class="input-group-addon" ng-click="vm.addOfficerToSPPD()" style="cursor: pointer;" ng-hide="vm.formValue.id">
+							<span class="input-group-addon" ng-click="vm.addOfficerToSPPD()" style="cursor: pointer;" ng-hide="vm.formValue.disabled">
 								<i class="fa fa-plus"></i>
 							</span>
 						</div>
-						<p ng-repeat="o in vm.formValue.officers" ng-hide="!vm.formValue.id">
+						<p ng-repeat="o in vm.formValue.officers" ng-hide="!vm.formValue.disabled">
 							{{o.nameAndOfficeId}}
 						</p>
-						<div class="input-group" style="margin-bottom: 2px;" ng-repeat="o in vm.formValue.officers" ng-hide="vm.formValue.id">
+						<div class="input-group" style="margin-bottom: 2px;" ng-repeat="o in vm.formValue.officers" ng-hide="vm.formValue.disabled">
 							<input type="text" class="form-control" disabled ng-model="o.nameAndOfficeId"
 								style="cursor: default;background: #ffffff;" />
 							<span class="input-group-addon" style="cursor: pointer;" ng-click="vm.removeOfficerFromSPPD( o )"><i class="fa fa-close"></i></span>
@@ -159,9 +164,9 @@
 								is-open="startDateOpen"
 								datepicker-options="dateOptions" 
 								close-text="Close"
-								alt-input-formats="altInputFormats"  ng-disabled="vm.formValue.id" style="cursor: default;"/>
+								alt-input-formats="altInputFormats"  ng-disabled="vm.formValue.disabled" style="cursor: default;"/>
 							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="startDateOpen = !startDateOpen"  ng-disabled="vm.formValue.id" style="cursor: default;">
+								<button type="button" class="btn btn-default" ng-click="startDateOpen = !startDateOpen"  ng-disabled="vm.formValue.disabled" style="cursor: default;">
 									<i class="glyphicon glyphicon-calendar"></i>
 								</button>
 							</span>
@@ -177,9 +182,9 @@
 								is-open="endDateOpen"
 								datepicker-options="dateOptions" 
 								close-text="Close"
-								alt-input-formats="altInputFormats"  ng-disabled="vm.formValue.id" style="cursor: default;"/>
+								alt-input-formats="altInputFormats"  ng-disabled="vm.formValue.disabled" style="cursor: default;"/>
 							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="endDateOpen = !endDateOpen"  ng-disabled="vm.formValue.id" style="cursor: default;">
+								<button type="button" class="btn btn-default" ng-click="endDateOpen = !endDateOpen"  ng-disabled="vm.formValue.disabled" style="cursor: default;">
 									<i class="glyphicon glyphicon-calendar"></i>
 								</button>
 							</span>
@@ -188,11 +193,11 @@
 
 					<div class="form-group" id="objective" ng-class="{'has-error': vm.hasError['objective']}">
 						<label>Tujuan</label>
-						<select class="form-control" ng-model="vm.formValue.province_id" ng-change="vm.provinceChanged();"  ng-disabled="vm.formValue.id" style="cursor: default;">
+						<select class="form-control" ng-model="vm.formValue.province_id" ng-change="vm.provinceChanged();"  ng-disabled="vm.formValue.disabled" style="cursor: default;">
 							<option ng-repeat="option in vm.provinces" value="{{option.id}}">{{option.name}}</option>
 						</select>
 						<br/>
-						<select class="form-control" ng-show="vm.formValue.showCities" ng-model="vm.formValue.objective"  ng-disabled="vm.formValue.id" style="cursor: default;">
+						<select class="form-control" ng-show="vm.formValue.showCities" ng-model="vm.formValue.objective"  ng-disabled="vm.formValue.disabled" style="cursor: default;">
 							<option ng-repeat="option in vm.cities" value="{{option.name}}">{{option.name}}</option>
 						</select>
 					</div>
@@ -200,7 +205,7 @@
 					<div class="form-group" ng-class="{'has-error': vm.hasError['task']}">
 						<label>Tugas</label>
 						<input type="text" class="form-control" placeholder="Tugas" id="task"
-						 	ng-disabled="vm.formValue.id" style="cursor: default;"
+						 	ng-disabled="vm.formValue.disabled" style="cursor: default;"
 							ng-model="vm.formValue.task">
 					</div>
 
@@ -218,12 +223,12 @@
 				Tutup
 			</button>
 			<button type="button" class="btn btn-primary btn-flat"
-				ng-hide="vm.formValue.id"
+				ng-hide="vm.formValue.disabled"
 				ng-click="vm.submit()">
 				Simpan
 			</button>
 			<button type="button" class="btn btn-primary btn-flat"
-				ng-hide="!vm.formValue.id"
+				ng-hide="!vm.formValue.disabled"
 				ng-click="vm.printLembar1( vm.formValue )">
 				<span class="glyphicon glyphicon-print"></span>
 				&nbsp;
@@ -231,7 +236,7 @@
 			</button>
 			<button type="button" class="btn btn-success btn-flat"
 				ng-click="vm.closeModal();vm.openModal(vm.formValue, 'confirm-to-next-state-modal.html');"
-				ng-hide="!vm.formValue.id">
+				ng-hide="!vm.formValue.disabled">
 				<span class="glyphicon glyphicon-log-in"></span>
 				&nbsp;
 				Input Data SPD

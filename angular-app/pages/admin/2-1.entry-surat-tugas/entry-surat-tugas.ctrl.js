@@ -95,11 +95,12 @@
 		var modalInstance;
 		vm.formValue;
 		vm.hasError;
-		function openModal( data, templateUrl ) {
+		function openModal( data, templateUrl, disabled ) {
 			vm.hasError = {};
 
 			if ( data ) {
 				vm.formValue = angular.copy(data);
+				vm.formValue.disabled = disabled;
 				vm.formValue.start_date = moment(vm.formValue.start_date, 'YYYY-MM-DD').toDate();
 				vm.formValue.end_date = moment(vm.formValue.end_date, 'YYYY-MM-DD').toDate();
 
@@ -134,6 +135,7 @@
 
 			} else {
 				vm.formValue = {
+					disabled: disabled,
 					officers: [],
 					listOfficers: angular.copy(officers), 
 					reference_number: currentSPPDNumber + '.a/BTPAL/ST/10/2017',
@@ -167,18 +169,13 @@
 			if (Object.keys(vm.hasError).length > 0) {
 				helper.setFocus(Object.keys(vm.hasError)[0]);
 			} else {
-				if ( vm.formValue.id ) {
-					console.log('editSPPD')
-					// dataservice.editSPPD( vm.formValue ).then( closeModal ).then( activate );
-				} else {
-					var a = moment(vm.formValue.start_date);
-					var b = moment(vm.formValue.end_date);
-					var diff = a.diff(b, 'days');
-					vm.formValue.total_day = Math.abs(diff);
-					vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD');
-					vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD');
-					dataservice.createSPPD( vm.formValue ).then( closeModal ).then( activate );
-				}
+				var a = moment(vm.formValue.start_date);
+				var b = moment(vm.formValue.end_date);
+				var diff = a.diff(b, 'days');
+				vm.formValue.total_day = Math.abs(diff);
+				vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD');
+				vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD');
+				dataservice.createSPPD( vm.formValue ).then( closeModal ).then( activate );
 			}
 		}
 		function remove() {
