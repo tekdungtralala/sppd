@@ -172,7 +172,7 @@
 				var a = moment(vm.formValue.start_date);
 				var b = moment(vm.formValue.end_date);
 				var diff = a.diff(b, 'days');
-				vm.formValue.total_day = Math.abs(diff);
+				vm.formValue.total_day = Math.abs(diff) + 1;
 				vm.formValue.start_date = moment(vm.formValue.start_date).format('YYYY-MM-DD');
 				vm.formValue.end_date = moment(vm.formValue.end_date).format('YYYY-MM-DD');
 				dataservice.createSPPD( vm.formValue ).then( closeModal ).then( activate );
