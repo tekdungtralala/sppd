@@ -21,16 +21,26 @@
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
-			vm.search = '';
-			dataservice.getEntrySuratTugas().then( afterGet );
-			function afterGet( results ) {
-				vm.listData = results;
-				_.forEach( vm.listData, function( d ) {
-					dataservice.getSPPDOfficer( d.id ).then( afterGetSPPDOfficer );
-					function afterGetSPPDOfficer( officers ) {
-						d.officers = officers;
-					}
-				});
+
+			function fetchSPPDData(provinces, cities) {
+				vm.search = '';
+				dataservice.getEntrySuratTugas().then( afterGet );
+				function afterGet( results ) {
+					vm.listData = results;
+					_.forEach( vm.listData, function( d ) {
+						dataservice.getSPPDOfficer( d.id ).then( afterGetSPPDOfficer );
+						function afterGetSPPDOfficer( officers ) {
+							d.officers = officers;
+						}
+						var citi = _.find(cities, function(c) {
+							return c.name === d.objective;
+						});
+						var prov = _.find(provinces, function(p) {
+							return p.id === citi.province_id;
+						});
+						d.province_name = prov.name;
+					});
+				}
 			}
 
 			var promises = [
@@ -73,6 +83,9 @@
 				});
 
 				currentSPPDNumber = parseInt(responses[5]);
+
+
+				fetchSPPDData(responses[0], responses[1]);
 			}
 		}
 

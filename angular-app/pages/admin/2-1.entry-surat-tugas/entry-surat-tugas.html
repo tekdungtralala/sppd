@@ -64,7 +64,7 @@
 							<tr ng-repeat="data in vm.listData | orderBy: vm.orderBy | filter:vm.search">
 								<td>{{data.id}}</td>
 								<td>{{data.reference_number}}</td>
-								<td>{{data.objective}}</td>
+								<td>{{data.objective}} - {{data.province_name}}</td>
 								<td>
 									{{data.start_date}} - {{data.end_date}}<br/>
 									( {{data.total_day}} hari )
