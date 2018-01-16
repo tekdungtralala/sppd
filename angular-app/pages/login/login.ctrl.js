@@ -23,7 +23,7 @@
 			dataservice.login(vm.auth)
 				.then(function() {
 					appData.setLoggedUser(true);
-					$state.go('admin');
+					$state.go('admin.home');
 				})
 				.catch(function() {
 					vm.errorMsg = true;

@@ -14,6 +14,16 @@
 				isSecure: true
 			})
 
+				.state('admin.home', {
+					url: '/home',
+					templateUrl: 'angular-app/pages/admin/1-0.home/home.html?version=' + window.version,
+					controller: 'home.ctrl',
+					controllerAs: 'vm',
+					treeViewActive: 'Master',
+					titlePage: 'Balai Teknologi Pengolahan Air dan Limbah - BPPT',
+					isSecure: true
+				})
+
 				.state('admin.data-jabatan', {
 					url: '/data-jabatan',
 					templateUrl: 'angular-app/pages/admin/1-1.data-jabatan/data-jabatan.html?version=' + window.version,

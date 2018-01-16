@@ -146,7 +146,7 @@
 	  <h1>
 		{{$root.titlePage}}
 	  </h1>
-	  <ol class="breadcrumb">
+	  <ol class="breadcrumb" ng-hide="vm.isHome">
 		<li><i class="fa fa-dashboard"></i>&nbsp; Admin</li>
 		<li>{{$root.treeViewActive}}</li>
 		<li class="active">{{$root.titlePage}}</li>

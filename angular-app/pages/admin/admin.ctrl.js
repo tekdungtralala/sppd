@@ -11,10 +11,12 @@
 		
 		vm.logout = logout;
 		vm.toState = toState;
+		vm.isHome = false;
 
 		abstractPage.startCtrl().then(activate);
 		function activate() {
 			if ( $state.current.name === 'admin' ) toState('data-jabatan');
+			vm.isHome = $state.current.url === '/home';
 		}
 
 		function logout() {
@@ -26,6 +28,7 @@
 
 		function toState( targetState ) {
 			$state.go('admin.' + targetState);
+			vm.isHome = false;
 		}
 	}
 

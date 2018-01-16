@@ -42,6 +42,7 @@
 	<script src="angular-app/pages/admin/admin.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/login/login.ctrl.js?version=<?php echo(rand()); ?>"></script>
 
+	<script src="angular-app/pages/admin/1-0.home/home.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/1-1.data-jabatan/data-jabatan.ctrl.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/1-2.data-golongan/data-golongan.ctlr.js?version=<?php echo(rand()); ?>"></script>
 	<script src="angular-app/pages/admin/1-3.data-pegawai/data-pegawai.ctrl.js?version=<?php echo(rand()); ?>"></script>
